@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+    <meta charset="utf-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+  <title>繁花相送</title>
+  <meta name="description" content="My Bmob App">
+  <meta name="viewport" content="width=device-width">
+  <link rel="stylesheet" type="text/css" href="reset.css">
+  <link rel="stylesheet" type="text/css" href="styles.css">
+  <link rel="stylesheet" type="text/css" href="iconfont.css">
+
+  <script type="text/javascript" src="srcjs/jquery.min.js"></script>
+  <script type="text/javascript" src="srcjs/bmob.js"></script>
+</head>
+
+<body>
+
+  <div id="main" class="main">
+	<div></div>
+  </div>
+
+    <div id = "nav" class="nav">
+        <ul class="ul">
+            <li>导航</li>
+            <li>导航</li>
+            <li>导航</li>
+        </ul>
+    </div>
+
+    <div id='content'></div>
+
+    <div id='shownav' class="shownav">
+        <i class="iconfont icon-unorderedlist" style="font-size:20px"></i>
+    </div>
+
+  <script type="text/javascript">
+	//Bmob.initialize("Application ID", "REST API Key");
+    Bmob.initialize("873b0fd8dbe9e8ff02d9923fe9698bb0", "cbca9557a637b9e82093720dbcfddabf");
+
+    $(document).ready(function()
+    {
+        var height = $(window).height();
+        $(document.body).css('height',height);
+
+        //获得指定的参数
+        function GetQueryString(name) {
+        var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)");
+        var r = window.location.search.substr(1).match(reg);
+        if (r != null) return unescape(r[2]); return null;
+        };
+
+        var code = GetQueryString('code')
+        $('#content').html(code)
+
+        window.location.href('https://api.weixin.qq.com/sns/oauth2/access_token?appid=wxcae7e19d9799a9d3&secret=4fe7de1d8e2ced2030a65466039aa373&code='+code+'&grant_type=authorization_code')
+
+    })
+
+    var navindex = true;
+    $('#shownav').click(function(){
+        if (navindex) {
+            navindex = false;
+            $('#nav').animate({marginLeft:'0%'},1000,'swing')
+        }
+        else {
+            navindex = true;
+            $('#nav').animate({marginLeft:'-36%'},1000,'swing')
+        }
+    });
+
+  </script>
+</body>
+</html>
