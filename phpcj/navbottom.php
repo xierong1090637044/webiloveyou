@@ -37,7 +37,7 @@ class Bottomnav
                   <svg class="icon" aria-hidden="true">
                         <use xlink:href="#icon-gerenzhongxin"></use>
                     </svg>
-                    <div class="name">未想好</div>
+                    <div class="name">还未想好</div>
                   </div>
                </div>';
     }
