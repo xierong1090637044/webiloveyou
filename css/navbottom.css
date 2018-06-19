@@ -1,3 +1,18 @@
+a
+{
+    text-decoration: none;
+    color:#fff;
+    cursor: unset;
+    outline:none;
+}
+a:focus{outline:none;}
+a:active{
+    background: #f27979
+}
+a:visited
+{
+    color: #fff;outline:none;
+}
 .navmain
 {
     width: 100%;
@@ -9,10 +24,18 @@
 }
 .item
 {
-    width: 23.5%;
+    width: 25%;
     height: 100%;
     text-align: center;
-    display: inline-block;
+    float: left;
+}
+.item1
+{
+    width: 25%;
+    height: 100%;
+    text-align: center;
+    float: left;
+    background: #2ca879;
 }
 .icon{
         width: 30px;
@@ -23,6 +46,7 @@
         margin-top: 8px;
 }
 .name{
+    margin-top: 2px;
     font-size: 10px;
     color: #fff;
 }

@@ -30,7 +30,7 @@ body {
 .shownav
 {
     position: fixed;
-    top: 5%;
+    bottom: 15%;
     right: 10%;
     width: 40px;
     height: 40px;

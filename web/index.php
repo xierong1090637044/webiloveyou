@@ -1,11 +1,13 @@
 <?php
-require_once('weixin.class.php');
-include_once 'phpcj/navbottom.php';
-include_once 'lib/BmobUser.class.php';
-include_once 'lib/BmobBql.class.php';
+require_once('../weixin.class.php');
+require_once('../staticcache.php');
+include_once '../phpcj/navbottom.php';
+include_once '../lib/BmobUser.class.php';
+include_once '../lib/BmobBql.class.php';
 
 $weixin = new class_weixin();
 $bmobUser = new BmobUser();
+$file = new File();
 $text = 'true';
 if($text =='true')
    {
@@ -37,23 +39,22 @@ else {
 		// var_dump($access_token_oauth2);
 		// $userinfo = $weixin->get_user_info($access_token_oauth2['openid']); //此方法能获取更详细的数据
 		// var_dump($userinfo);
+    }
 }
-}
-
 ?>
 
 <html lang="zh-cn">
 	<head>
 		<meta charset="UTF-8">
 		<meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=0">
-		<title>网页授权Demo</title>
-		<link rel="stylesheet"  href="css/reset.css">
-        <link rel="stylesheet"  href="css/navbottom.css">
-		<link rel="stylesheet"  href="css/style.css">
-		<link rel="stylesheet"  href="css/iconfont.css">
-		<script type="text/javascript" src="srcjs/jquery.min.js"></script>
-		<script type="text/javascript" src="srcjs/bmob.js"></script>
-        <script src="js/iconfont.js"></script>
+		<title>别来无恙</title>
+		<link rel="stylesheet"  href="../css/reset.css">
+        <link rel="stylesheet"  href="../css/navbottom.css">
+		<link rel="stylesheet"  href="../css/style.css">
+		<link rel="stylesheet"  href="../css/iconfont.css">
+		<script type="text/javascript" src="../srcjs/jquery.min.js"></script>
+		<script type="text/javascript" src="../srcjs/bmob.js"></script>
+        <script src="../js/iconfont.js"></script>
 	</head>
 	<body ontouchstart="">
 		<div id="main" class="main">
@@ -67,7 +68,7 @@ else {
 	          <ul class="ul">
                   <li><img src="<?php echo $info["avatar"];?>" class="avatarli"></li>
                   <li class="nicknameli"><?php echo $info["username"];?></li>
-	              <li class="daohang">导航</li>
+	              <a href=""><li class="daohang">导航</li><a>
 	              <li class="daohang1">导航</li>
 	              <li class="daohang1">导航</li>
 	          </ul>
@@ -77,7 +78,7 @@ else {
 	          <i class="iconfont icon-unorderedlist" style="font-size:20px"></i>
 	      </div>
 
-          <?php  $bottom =new Bottomnav();$bottom->Bottom() ?>
+          <?php  $bottom =new Bottomnav("1");$bottom->Bottom() ?>
 
 	    <script type="text/javascript">
 	  	//Bmob.initialize("Application ID", "REST API Key");
