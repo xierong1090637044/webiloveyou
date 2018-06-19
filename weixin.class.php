@@ -29,7 +29,7 @@ class class_weixin
 			}
         }else {										//当前目录有写权限的环境
             //2. 本地写入
-			$res = file_get_contents('token.json');
+			$res = file_get_contents('../token.json');
 			$result = json_decode($res, true);
 			$this->expires_time = $result["expires_time"];
 			$this->access_token = $result["access_token"];
@@ -40,7 +40,7 @@ class class_weixin
 				$result = json_decode($res, true);
 				$this->access_token = $result["access_token"];
 				$this->expires_time = time();
-				file_put_contents('token.json', '{"access_token": "'.$this->access_token.'", "expires_time": '.$this->expires_time.'}');
+				file_put_contents('../token.json', '{"access_token": "'.$this->access_token.'", "expires_time": '.$this->expires_time.'}');
 			}
         }
     }

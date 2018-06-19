@@ -68,7 +68,7 @@ else {
 	          <ul class="ul">
                   <li><img src="<?php echo $info["avatar"];?>" class="avatarli"></li>
                   <li class="nicknameli"><?php echo $info["username"];?></li>
-	              <a href=""><li class="daohang">导航</li><a>
+	              <a href="../funny/love_heart/index.html"><li class="daohang">our love story</li><a>
 	              <li class="daohang1">导航</li>
 	              <li class="daohang1">导航</li>
 	          </ul>
