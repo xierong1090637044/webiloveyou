@@ -30,7 +30,7 @@ query.find({
                "</div>"+
                "<div class='qsavatar'>"+"<img class='qsavatarimg' src="+avatar+"> </img> </div>"+
                "<div class='heart' rel='like' id="+id+">"+count+"</div>" +
-               "</div>")
+               "</div>");
           }
       },
   });
@@ -80,6 +80,9 @@ query.find({
                         $('#edit').css('display','none');
                     },1000);
 
+                    var arr = [];
+                    localStorage.setItem("unlike", JSON.stringify(arr));
+                    var arr = JSON.parse(localStorage.getItem("unlike"));
                     var GameScore = Bmob.Object.extend("sanhangqs");
                     var query = new Bmob.Query(GameScore);
                     // 查询所有数
@@ -93,15 +96,36 @@ query.find({
                                   var title = object.get('title');
                                   var content = object.get('content');
                                   var name = object.get("username");
+                                   var count = object.get("count");
                                   var avatar = object.get("avatar");
-                                   var time = object.createdAt;
-                                  console.log(object.id + ' - ' + object.get('content'));
+                                  var time = object.createdAt;
+                                  var id = object.id;
+                                  //console.log(object.id + ' - ' + object.get('content'));
+                                  arr.push(id)
+                                  localStorage.setItem("unlike", JSON.stringify(arr))
+                                 // console.log(object.id + ' - ' + object.get('content'));
                                   $('.qingshu').find('.content').append("<div class='qsitem'> <div class='qscontent'>"+
                                    "<div class='qscontent1'> <text>"+content+"</text> </div>"+
                                    "<span class='qstitle'>"+title+"</span>"+
                                    "<span class='qstime'>"+time+"</span>"+
                                    "</div>"+
-                                   "<div class='qsavatar'>"+"<img class='qsavatarimg' src="+avatar+"> </img> </div> </div>")
+                                   "<div class='qsavatar'>"+"<img class='qsavatarimg' src="+avatar+"> </img> </div>"+
+                                   "<div class='heart' rel='like' id="+id+">"+count+"</div>" +
+                                   "</div>")
+
+                                   setTimeout(function(){
+                                       var like = JSON.parse(localStorage.getItem("like"));
+                                       var unlike = JSON.parse(localStorage.getItem("unlike"));
+                                       for (var i = 0; i < like.length; i++) {
+                                           var index = $.inArray(like[i],unlike)
+                                           console.log(index);
+                                           console.log(like[index]);
+                                          var count = parseInt($('#'+unlike[index]).html());
+                                          //$('#'+unlike[index]).html(count+1);
+                                          $('#'+unlike[index]).addClass("heartAnimation");
+                                       }
+                                       console.log(unlike);
+                                   },1500)
                               }
                           },
                       });

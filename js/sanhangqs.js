@@ -1,4 +1,6 @@
 $(document).ready(function(){
+  var height = $(window).height();
+  $(document.body).css('height',height);
 
   var like =  localStorage["like"];
   console.log(like);
@@ -19,11 +21,11 @@ $(document).ready(function(){
              console.log(index);
              console.log(like[index]);
             var count = parseInt($('#'+unlike[index]).html());
-            $('#'+unlike[index]).html(count+1);
+            //$('#'+unlike[index]).html(count+1);
             $('#'+unlike[index]).addClass("heartAnimation");
          }
          console.log(unlike);
-     },1000)
+     },2000)
   }
 
   $('#create').click(function(){

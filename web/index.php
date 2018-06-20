@@ -8,7 +8,7 @@ include_once '../lib/BmobBql.class.php';
 $weixin = new class_weixin();
 $bmobUser = new BmobUser();
 $file = new File();
-$text = 'true';
+$text = 'false';
 if($text =='true')
    {
 	   $name = "啦啦啦、岁月无恙";
