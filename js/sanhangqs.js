@@ -69,6 +69,7 @@ $(document).ready(function(){
         arr.splice(index, 1);
         localStorage.setItem("like", JSON.stringify(arr));
         $(this).html(count-1);
+        $(this).removeClass("heartAnimation");
         $(this).css("background-position","left");
 
         var GameScore = Bmob.Object.extend("sanhangqs");
