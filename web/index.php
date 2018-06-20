@@ -24,16 +24,17 @@ else {
 		Header("Location: $jumpurl");
 	}else{
 		$access_token_oauth2 = $weixin->oauth2_access_token($_GET["code"]);
-		$userinfo = $weixin->oauth2_get_user_info($access_token_oauth2['access_token'], $access_token_oauth2['openid']);
-		$name = $userinfo["nickname"];
-		$password = $userinfo["openid"];
+		$info = $weixin->oauth2_get_user_info($access_token_oauth2['access_token'], $access_token_oauth2['openid']);
+		$name = $info["nickname"];
+		$password = $info["openid"];
 		try {
 			$res = $bmobUser->login($name,$password);
             $info=json_encode($res);
             $info=json_decode($info,true);
 		} catch (Exception $e) {
-			$res = $bmobUser->register(array("username"=>$userinfo["nickname"], "password"=>$userinfo["openid"],"openid"=>$userinfo["openid"],"avatar"=>str_replace("/0","/46",$userinfo["headimgurl"]),"sex"=>$userinfo["sex"]));
-            $info=json_encode($res);
+			$res = $bmobUser->register(array("username"=>$info["nickname"], "password"=>$info["openid"],"openid"=>$info["openid"],"avatar"=>str_replace("/0","/46",$info["headimgurl"]),"sex"=>$info["sex"]));
+            $res1 = $bmobUser->login($name,$password);
+            $info=json_encode($res1);
             $info=json_decode($info,true);
 		}
 		// var_dump($access_token_oauth2);
@@ -88,6 +89,9 @@ else {
 	      {
 	          var height = $(window).height();
 	          $(document.body).css('height',height);
+              localStorage["objectid"]="<?php echo $info["objectId"];?>";
+              localStorage["username"]="<?php echo $info["username"];?>";
+              localStorage["avatar"]="<?php echo $info["avatar"];?>";
 	      })
 
 	      var navindex = true;

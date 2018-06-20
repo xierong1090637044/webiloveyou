@@ -1,0 +1,14 @@
+.toast1
+{
+    width: 60%;
+    position: absolute;
+    bottom: 20%;
+    left: 20%;
+    color: #fff;
+    line-height: 30px;
+    text-align: center;
+    border-radius: 4px;
+    display: none;
+    z-index: 1000;
+    font-size:12px;
+}

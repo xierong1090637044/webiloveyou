@@ -1,0 +1,51 @@
+body
+{
+    margin: unset;
+    position: relative;
+    height: 100%;
+}
+.mobilecontent
+{
+    width: auto;
+    height: 100%;
+    background: rgb(36, 33,28);
+}
+.headeropera
+{
+    float: left;
+    width: calc(100% - 16px);
+    line-height: 28px;
+    color: #fff;
+    font-size: 15px;
+    padding: 4px;
+    padding-left: 8px;
+    padding-right: 8px;
+    background: rgb(255, 150,128);
+}
+.create
+{
+    float: left;
+}
+.orderby
+{
+    float: right;
+}
+.qingshu
+{
+    float: left;
+    width: 100%;
+    color: #fff;
+    height: 85%;
+    overflow: scroll;
+}
+.content
+{
+    width: calc(100% - 8px);
+    float: right;
+    padding: 4px;
+}
+.qscontent
+{
+    padding: 4px;
+    font-size: 13px;
+}
