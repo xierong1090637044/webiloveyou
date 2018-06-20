@@ -17,6 +17,7 @@ include_once '../lib/BmobBql.class.php';
 		<link rel="stylesheet"  href="../css/iconfont.css">
 		<link rel="stylesheet"  href="../cjcss/create.css">
 		<link rel="stylesheet"  href="../cjcss/toast.css">
+		<link href='http://fonts.googleapis.com/css?family=Lato:300,400,700' rel='stylesheet' type='text/css'>
 		<script type="text/javascript" src="../srcjs/jquery.min.js"></script>
 		<script type="text/javascript" src="../cjjs/create.js"></script>
 		<script type="text/javascript" src="../srcjs/bmob.js"></script>
@@ -33,6 +34,9 @@ include_once '../lib/BmobBql.class.php';
 				<div class="content"></div>
 			</div>
 		</div>
+		<div id='stars'></div>
+		<div id='stars2'></div>
+		<div id='stars3'></div>
 		<?php  $toast =new showToast("toast","不能不填哦！");$toast->showtoast() ?>
 		<?php  $toast =new showToast("toast1","创建成功！");$toast->showtoast() ?>
 		<?php  $toast =new showToast("toast2","内容不能少于15个字！");$toast->showtoast() ?>

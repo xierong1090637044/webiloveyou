@@ -57,7 +57,7 @@
 }
 .qscontent
 {
-    float: left;
+    float: right;
     width: 70%;
     border: 1px solid #fff;
     border-radius: 4px;
@@ -70,7 +70,7 @@
 }
 .qsavatar
 {
-    float: left;
+    float: right;
     margin-top: 10px;
 
 }
