@@ -3,6 +3,9 @@ Bmob.initialize("873b0fd8dbe9e8ff02d9923fe9698bb0", "cbca9557a637b9e82093720dbcf
 
 var GameScore = Bmob.Object.extend("sanhangqs");
 var query = new Bmob.Query(GameScore);
+var arr = [];
+localStorage.setItem("unlike", JSON.stringify(arr));
+var arr = JSON.parse(localStorage.getItem("unlike"));
 // 查询所有数
 query.find({
      success: function(results) {
@@ -14,14 +17,20 @@ query.find({
               var title = object.get('title');
               var name = object.get("username");
               var avatar = object.get("avatar");
+              var count = object.get("count");
               var time = object.createdAt;
-              console.log(object.id + ' - ' + object.get('content'));
+              var id = object.id;
+              arr.push(id)
+              localStorage.setItem("unlike", JSON.stringify(arr))
+             // console.log(object.id + ' - ' + object.get('content'));
               $('.qingshu').find('.content').append("<div class='qsitem'> <div class='qscontent'>"+
-               "<div class='qscontent1'> <text>"+content+"</tex> </div>"+
+               "<div class='qscontent1'> <text>"+content+"</text> </div>"+
                "<span class='qstitle'>"+title+"</span>"+
                "<span class='qstime'>"+time+"</span>"+
                "</div>"+
-               "<div class='qsavatar'>"+"<img class='qsavatarimg' src="+avatar+"> </img> </div> </div>")
+               "<div class='qsavatar'>"+"<img class='qsavatarimg' src="+avatar+"> </img> </div>"+
+               "<div class='heart' rel='like' id="+id+">"+count+"</div>" +
+               "</div>")
           }
       },
   });
@@ -60,6 +69,7 @@ query.find({
             sanhangqs.set("avatar",avatar);
             sanhangqs.set("content", content1);
             sanhangqs.set("parent",user);
+            sanhangqs.set("count",0);
             //添加数据，第一个入口参数是null
             sanhangqs.save(null, {
                 success: function(gameScore) {
@@ -101,5 +111,5 @@ query.find({
               }
           });
         }
-    })
+    });
 });
