@@ -9,3 +9,13 @@
     z-index: 100;
     display: none;
 }
+.button
+{
+    width: 80%;
+    background: rgb(32, 36, 46);
+    line-height: 38px;
+    font-size: 15px;
+    color: #fff;
+    border-radius: 4px;
+    border: 1px solid #fff;
+}

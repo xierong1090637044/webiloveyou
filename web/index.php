@@ -8,9 +8,6 @@ include_once '../lib/BmobBql.class.php';
 $weixin = new class_weixin();
 $bmobUser = new BmobUser();
 
-//$expire=time()+60*60*24*30;
-//setcookie("username", "啦啦啦、岁月无恙", $expire);
-//setcookie("password", "oaFlg1uTBXz2U_J2njjOaUQY3_F0", $expire);
 $username = $_COOKIE["username"];
 $password = $_COOKIE["password"];
 if($username ==null || $password ==null)
@@ -42,39 +39,6 @@ if($username ==null || $password ==null)
     $info=json_encode($res1);
     $info=json_decode($info,true);
 }
-
-/*$text = 'true';
-if($text =='true')
-   {
-	   $name = "啦啦啦、岁月无恙";
-	   $password = "oaFlg1uTBXz2U_J2njjOaUQY3_F0";
-	   $res = $bmobUser->login($name,$password);
-       $info=json_encode($res);
-       $info=json_decode($info,true);
-   }
-else {
-	if (!isset($_GET["code"])){
-		$redirect_url = 'http://'.$_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI'];
-		$jumpurl = $weixin->oauth2_authorize($redirect_url, "snsapi_userinfo", "123");
-		Header("Location: $jumpurl");
-	}else{
-		$access_token_oauth2 = $weixin->oauth2_access_token($_GET["code"]);
-		$info = $weixin->oauth2_get_user_info($access_token_oauth2['access_token'], $access_token_oauth2['openid']);
-		$name = $info["nickname"];
-		$password = $info["openid"];
-		try {
-			$res = $bmobUser->login($name,$password);
-            $info=json_encode($res);
-            $info=json_decode($info,true);
-		} catch (Exception $e) {
-			$res = $bmobUser->register(array("username"=>$info["nickname"], "password"=>$info["openid"],"openid"=>$info["openid"],"avatar"=>str_replace("/0","/46",$info["headimgurl"]),"sex"=>$info["sex"]));
-            $res1 = $bmobUser->login($name,$password);
-            $info=json_encode($res1);
-            $info=json_decode($info,true);
-		}*/
-		// var_dump($access_token_oauth2);
-		// $userinfo = $weixin->get_user_info($access_token_oauth2['openid']); //此方法能获取更详细的数据
-		// var_dump($userinfo);
 ?>
 
 <html lang="zh-cn">
@@ -125,7 +89,11 @@ else {
 	      {
 	          var height = $(window).height();
 	          $(document.body).css('height',height);
-              localStorage["state"]=0;
+              var state =localStorage["state"];
+              if(state ==null || state =="")
+              {
+                  localStorage["state"]=0;
+              }localStorage["state"]=0;
               localStorage["objectid"]="<?php echo $info["objectId"];?>";
               localStorage["username"]="<?php echo $info["username"];?>";
               localStorage["avatar"]="<?php echo $info["avatar"];?>";
