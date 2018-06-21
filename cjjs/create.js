@@ -31,6 +31,21 @@ query.find({
                "<div class='qsavatar'>"+"<img class='qsavatarimg' src="+avatar+"> </img> </div>"+
                "<div class='heart' rel='like' id="+id+">"+count+"</div>" +
                "</div>");
+
+               // var id = $(this).attr("id");
+               setTimeout(function(){
+                   var like = JSON.parse(localStorage.getItem("like"));
+                   var unlike = JSON.parse(localStorage.getItem("unlike"));
+                   for (var i = 0; i < like.length; i++) {
+                       var index = $.inArray(like[i],unlike)
+                       console.log(index);
+                       console.log(like[index]);
+                      var count = parseInt($('#'+unlike[index]).html());
+                      //$('#'+unlike[index]).html(count+1);
+                      $('#'+unlike[index]).addClass("heartAnimation");
+                   }
+                   console.log(unlike);
+               },1000)
           }
       },
   });
