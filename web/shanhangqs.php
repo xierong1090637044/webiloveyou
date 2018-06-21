@@ -27,8 +27,8 @@ include_once '../lib/BmobBql.class.php';
 	<body>
 		<div class="mobilecontent">
 			<div class="headeropera">
-				<div class="create" id="create"><span>创建</span></div>
-				<div class="orderby"><span>排序</span></div>
+				<div class="create" id="create"><span style="font-size:13px;">创建</span></div>
+				<div class="orderby"><span style="font-size:13px;">排序</span></div>
 			</div>
 			<div class="qingshu">
 				<div class="content"></div>

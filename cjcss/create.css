@@ -101,6 +101,7 @@
 	    width: 20%;
 	    cursor: pointer;
         float: left;
+        font-size: 12px;
     }
     .heart:hover, .heart:focus{
     background-position: right;

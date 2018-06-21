@@ -31,12 +31,14 @@ class Bottomnav
                      </div>
                  </a>
 
+                 <a href ="isyou.php">
                      <div class= "item">
                      <svg class="icon" aria-hidden="true">
                            <use xlink:href="#icon-yuedu"></use>
                        </svg>
                        <div class="name">缘来是你</div>
                      </div>
+                     <a>
 
                      <div class= "item">
                      <svg class="icon" aria-hidden="true">
@@ -67,12 +69,14 @@ class Bottomnav
                          </div>
                          </a>
 
-                         <div class= "item">
-                         <svg class="icon" aria-hidden="true">
-                               <use xlink:href="#icon-yuedu"></use>
-                           </svg>
-                           <div class="name">缘来是你</div>
-                         </div>
+                         <a href ="isyou.php">
+                             <div class= "item">
+                             <svg class="icon" aria-hidden="true">
+                                   <use xlink:href="#icon-yuedu"></use>
+                               </svg>
+                               <div class="name">缘来是你</div>
+                             </div>
+                             <a>
 
                          <div class= "item">
                          <svg class="icon" aria-hidden="true">
@@ -85,30 +89,32 @@ class Bottomnav
                     break;
                     case '3':
                     echo '<div class="navmain">
+                            <a href ="index.php">
                              <div class= "item">
-                             <a href ="index.php">
                              <svg class="icon" aria-hidden="true">
                                    <use xlink:href="#icon-gerenzhongxin"></use>
                                </svg>
                                <div class="name">别来无恙</div>
-                               </a>
                              </div>
+                              </a>
 
+                              <a href ="shanhangqs.php">
                              <div class= "item">
-                             <a href ="shanhangqs.php">
                              <svg class="icon" aria-hidden="true">
                                  <use xlink:href="#icon-shufa"></use>
                              </svg>
                              <div class="name">三行情书</div>
+                             </div>
                              </a>
-                             </div>
 
-                             <div class= "item1">
-                             <svg class="icon" aria-hidden="true">
-                                   <use xlink:href="#icon-yuedu"></use>
-                               </svg>
-                               <div class="name">缘来是你</div>
-                             </div>
+                             <a href ="isyou.php">
+                                 <div class= "item1">
+                                 <svg class="icon" aria-hidden="true">
+                                       <use xlink:href="#icon-yuedu"></use>
+                                   </svg>
+                                   <div class="name">缘来是你</div>
+                                 </div>
+                                <a>
 
                              <div class= "item">
                              <svg class="icon" aria-hidden="true">
@@ -139,12 +145,14 @@ class Bottomnav
                                  </div>
                                  </a>
 
-                                 <div class= "item">
-                                 <svg class="icon" aria-hidden="true">
-                                       <use xlink:href="#icon-yuedu"></use>
-                                   </svg>
-                                   <div class="name">缘来是你</div>
-                                 </div>
+                                 <a href ="isyou.php">
+                                     <div class= "item">
+                                     <svg class="icon" aria-hidden="true">
+                                           <use xlink:href="#icon-yuedu"></use>
+                                       </svg>
+                                       <div class="name">缘来是你</div>
+                                     </div>
+                                     <a>
 
                                  <div class= "item1">
                                  <svg class="icon" aria-hidden="true">

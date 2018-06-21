@@ -1,0 +1,36 @@
+<?php
+require('../phpcj/mask.php');
+include_once '../phpcj/navbottom.php';
+?>
+
+<html lang="zh-cn" class="no-js">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=0">
+		<title>缘来是你</title>
+        <link rel="stylesheet" type="text/css" href="../css/isyou.css" />
+        <link rel="stylesheet"  href="../css/navbottom.css">
+		<link rel="stylesheet"  href="../css/common.css">
+		<script type="text/javascript" src="../srcjs/jquery.min.js"></script>
+		<script type="text/javascript" src="../srcjs/bmob.js"></script>
+        <script src="../js/iconfont.js"></script>
+        <script src="../js/isyou.js"></script>
+	</head>
+    <body>
+        <div class="mobilecontent">
+			<div class="headeropera">
+				<div class="create" id="create"><span style="font-size:13px">上传照片</span></div>
+				<div class="orderby"><span style="font-size:13px">换一批</span></div>
+			</div>
+		</div>
+        <div id ='iycontent' class="iycontent">
+            <div class="iycontent1">
+                <div class="iytext" style="font-size:12px">这里的每一张图片</div>
+                <div class="iytext1">都有可能代表着一个感人的故事</div>
+            </div>
+        </div>
+        <?php  $mask =new Mask;$mask->mask() ?>
+        <?php  $bottom =new Bottomnav("3");$bottom->Bottom() ?>
+        <script type="text/javascript"></script>
+	</body>
+</html>
