@@ -21,6 +21,7 @@ a:visited
     bottom: 0;
     left:0;
     background:#f27979;
+    z-index: 10000;
 }
 .item
 {

@@ -13,7 +13,7 @@ class Bottomnav
     {
         switch ($this->selectnub) {
             case '1':
-            echo '<div class="navmain" onclick="window.location.href">
+            echo '<div class="navmain" id="navmain" onclick="window.location.href">
                      <div class= "item1">
                      <svg class="icon" aria-hidden="true">
                            <use xlink:href="#icon-gerenzhongxin"></use>

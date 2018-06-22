@@ -82,15 +82,17 @@
 }
 .qstitle
 {
-    margin-top: 5px;
-    margin-bottom: 5px;
+    margin-top: 3px;
+    margin-bottom: 3px;
     float: left;
+    font-size: 12px;
 }
 .qstime
 {
-    margin-top: 5px;
-    margin-bottom: 5px;
+    margin-top: 3px;
+    margin-bottom: 3px;
     float: right;
+    font-size: 12px;
 }
 
     .heart {

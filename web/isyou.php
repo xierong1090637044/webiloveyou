@@ -23,10 +23,13 @@ include_once '../phpcj/navbottom.php';
     <body>
         <div class="mobilecontent">
 			<div class="headeropera">
-				<div class="create" id="create"><span style="font-size:13px">上传照片</span></div>
+				<a href="uploadimg.php"><div class="create" id="create"><span style="font-size:13px">上传照片</span></div></a>
 				<div class="orderby"><span style="font-size:13px">换一批</span></div>
 			</div>
+			<div class="usercontent">
+			</div>
 		</div>
+
         <div id ='iycontent' class="iycontent">
             <div class="iycontent1">
                 <div class="iytext" style="font-size:12px">这里的每一张图片</div>
@@ -39,7 +42,7 @@ include_once '../phpcj/navbottom.php';
 				<div class="iytextcontent">我猜中了前头可我猜不着这结局</div>
 				<div class="iytextcontent" style="text-align:right">————致意中人</div>
 			</div>
-			<?php  $button =new Button("confrim","确定" ,"buttonposition");$button->button() ?>
+			<?php  $button =new Button("confrim","确定" ,"buttonposition");$button->button()?>
         </div>
         <?php  $mask =new Mask;$mask->mask() ?>
         <?php  $bottom =new Bottomnav("3");$bottom->Bottom() ?>

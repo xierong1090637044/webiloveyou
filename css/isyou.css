@@ -3,15 +3,20 @@ body
     margin: unset;
     position: relative;
 }
+
 .mobilecontent
 {
     width: auto;
     height: 100%;
+    overflow: scroll;
     background: radial-gradient(ellipse at bottom, #1b2735 0%, #090a0f 100%);
 }
 .headeropera
 {
     float: left;
+    position: fixed;
+    top:0%;
+    z-index: 10000;
     width: calc(100% - 16px);
     line-height: 28px;
     color: #fff;
@@ -102,6 +107,191 @@ body
     width: 60% !important;
     margin-left: 20%;
     margin-top: 139px;
+}
+.single
+{
+    position: relative;
+    max-width: 40%;
+    padding: 2%;
+    margin: 3%;
+    background: linear-gradient(120deg, #a8edea 0%, #fed6e3 100%);
+    display: inline-block;
+    border-radius: 4px;
+}
+.usercontent
+{
+    width: 100%;
+    padding-bottom: 75px;
+}
+.iyimgstyle
+{
+    width: 100%;
+    position: relative;
+    z-index: 101;
+    border-radius: 9px;
+}
+.iycontentbmob
+{
+    width: 80%;
+    height: 80%;
+    padding: 4px;
+    font-family: cursive;
+    border: 1px solid;
+    border-image: -webkit-linear-gradient( red, #ffb600) 30 30;
+    border-image: -moz-linear-gradient( red, #ffb600) 30 30;
+    border-image: linear-gradient( red, #ffb600) 30 30;
+    font-size: 12px;
+    position: absolute;
+    text-align: center;
+    top:8.5%;
+    left: 6.5%;
+    z-index: 100;
+    transform: rotateY(-180deg);
+    opacity: 0;
+}
+.animation
+{
+    animation: myfirst2 2s;
+}
+.animation1
+{
+    animation: myfirst4 2s;
+}
+.contentanimation
+{
+    animation: myfirst3 2s;
+}
+.contentanimation1
+{
+    animation: myfirst5 2s;
+}
+.index
+{
+    z-index: 99 !important;
+    transform: rotateY(180deg);
+    opacity: 0;
+}
+.index1
+{
+    z-index: 100 !important;
+    transform: rotateY(0deg);
+    opacity: 1;
+}
+
+.nickname
+{
+    position: fixed;
+    bottom: 7%;
+    right: 5%;
+    width: 50%;
+    overflow: hidden;
+    text-overflow:ellipsis;
+    white-space: nowrap;
+}
+.iyavatar
+{
+    width: 20px;
+    border-radius: 50%;
+    position: fixed;
+    bottom: 5%;
+    left: 29%;
+    border: 1px solid#f00;
+}
+
+@keyframes myfirst5
+{
+    100% {transform: rotateY(-180deg);opacity: 0}
+    0% {transform: rotateY(0deg);opacity: 1}
+}
+
+@-moz-keyframes myfirst5 /* Firefox */
+{
+    100% {transform: rotateY(-180deg);opacity: 0}
+    0% {transform: rotateY(0deg);opacity: 1}
+}
+
+@-webkit-keyframes myfirst5 /* Safari 和 Chrome */
+{
+    100% {transform: rotateY(-180deg);opacity: 0}
+    0% {transform: rotateY(0deg);opacity: 1}
+}
+
+@-o-keyframes myfirst5 /* Opera */
+{
+    100% {transform: rotateY(-180deg);opacity: 0}
+    0% {transform: rotateY(0deg);opacity: 1}
+}
+
+@keyframes myfirst4
+{
+    0% {transform: rotateY(180deg); opacity: 99;opacity: 0}
+    100% {transform: rotateY(0deg); z-index: 101;opacity: 1}
+}
+
+@-moz-keyframes myfirst4 /* Firefox */
+{
+    0% {transform: rotateY(180deg); opacity: 99;opacity: 0}
+    100% {transform: rotateY(0deg); z-index: 101;opacity: 1}
+}
+
+@-webkit-keyframes myfirst4 /* Safari 和 Chrome */
+{
+    0% {transform: rotateY(180deg); opacity: 99;opacity: 0}
+    100% {transform: rotateY(0deg); z-index: 101;opacity: 1}
+}
+
+@-o-keyframes myfirst4 /* Opera */
+{
+    00% {transform: rotateY(180deg); opacity: 99;opacity: 0}
+    100% {transform: rotateY(0deg); z-index: 101;opacity: 1}
+}
+
+@keyframes myfirst3
+{
+    0% {transform: rotateY(-180deg);opacity: 0}
+    100% {transform: rotateY(0deg);opacity: 1}
+}
+
+@-moz-keyframes myfirst3 /* Firefox */
+{
+    0% {transform: rotateY(-180deg);opacity: 0}
+    100% {transform: rotateY(0deg);opacity: 1}
+}
+
+@-webkit-keyframes myfirst3 /* Safari 和 Chrome */
+{
+    0% {transform: rotateY(-180deg);opacity: 0}
+    100% {transform: rotateY(0deg);opacity: 1}
+}
+
+@-o-keyframes myfirst3 /* Opera */
+{
+    0% {transform: rotateY(-180deg);opacity: 0}
+    100% {transform: rotateY(0deg);opacity: 1}
+}
+
+@keyframes myfirst2
+{
+    0% {transform: rotateY(0deg); z-index: 101;opacity: 1}
+    100% {transform: rotateY(180deg); opacity: 99;opacity: 0}
+}
+
+@-moz-keyframes myfirst2 /* Firefox */
+{
+    0% {transform: rotateY(0deg); z-index: 101;opacity: 1}
+    100% {transform: rotateY(180deg); opacity: 99;opacity: 0}
+}
+
+@-webkit-keyframes myfirst2 /* Safari 和 Chrome */
+{
+    0% {transform: rotateY(0deg); z-index: 101;opacity: 1}
+    100% {transform: rotateY(180deg); opacity: 99;opacity: 0}
+}
+
+@-o-keyframes myfirst2 /* Opera */
+{
+    0% {transform: rotateY(0deg); z-index: 101;opacity: 1}
+    100% {transform: rotateY(180deg); opacity: 99;opacity: 0}
 }
 
 @keyframes myfirst

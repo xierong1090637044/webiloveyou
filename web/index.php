@@ -93,7 +93,7 @@ if($username ==null || $password ==null)
               if(state ==null || state =="")
               {
                   localStorage["state"]=0;
-              }localStorage["state"]=0;
+              }
               localStorage["objectid"]="<?php echo $info["objectId"];?>";
               localStorage["username"]="<?php echo $info["username"];?>";
               localStorage["avatar"]="<?php echo $info["avatar"];?>";
