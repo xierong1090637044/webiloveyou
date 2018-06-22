@@ -122,7 +122,7 @@ include_once '../phpcj/showtoast.php';
                       var file = fileUploadControl.files[0];
 					  var username = localStorage["username"];
 					  var avatar = localStorage["avatar"]
-                      var name = name+".jpg";
+                      var name = username+".jpg";
                       var file = new Bmob.File(name, file);
                       file.save().then(function(obj) {
                          var url = obj.url();
