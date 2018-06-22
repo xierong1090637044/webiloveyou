@@ -2,6 +2,7 @@
 require('../phpcj/mask.php');
 require('../phpcj/button.php');
 include_once '../phpcj/navbottom.php';
+include_once '../phpcj/showtoast.php';
 ?>
 
 <html lang="zh-cn" class="no-js">
@@ -15,6 +16,7 @@ include_once '../phpcj/navbottom.php';
         <link rel="stylesheet" type="text/css" href="../css/isyou.css" />
         <link rel="stylesheet"  href="../css/navbottom.css">
 		<link rel="stylesheet"  href="../css/common.css">
+		<link rel="stylesheet"  href="../cjcss/toast.css">
 		<script type="text/javascript" src="../srcjs/jquery.min.js"></script>
 		<script type="text/javascript" src="../srcjs/bmob.js"></script>
         <script src="../js/iconfont.js"></script>
@@ -24,7 +26,7 @@ include_once '../phpcj/navbottom.php';
         <div class="mobilecontent">
 			<div class="headeropera">
 				<a href="uploadimg.php"><div class="create" id="create"><span style="font-size:13px">上传照片</span></div></a>
-				<div class="orderby"><span style="font-size:13px">换一批</span></div>
+				<div class="orderby" id="next"><span style="font-size:13px">换一批</span></div>
 			</div>
 			<div class="usercontent">
 			</div>
@@ -45,6 +47,7 @@ include_once '../phpcj/navbottom.php';
 			<?php  $button =new Button("confrim","确定" ,"buttonposition");$button->button()?>
         </div>
         <?php  $mask =new Mask;$mask->mask() ?>
+		<?php  $toast =new showToast("toast4","暂时没有更多数据了哦！","addtoaststyle");$toast->showtoast() ?>
         <?php  $bottom =new Bottomnav("3");$bottom->Bottom() ?>
         <script type="text/javascript"></script>
 	</body>

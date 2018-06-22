@@ -24,7 +24,7 @@
              $('#mask').css("display","none");
 
              localStorage["state"] =1;
-         })
+         });
 
          //查询isyou数据表获取数据
          var IsYou = Bmob.Object.extend("isyou");
@@ -63,6 +63,47 @@
                  img.addClass("animation").addClass("index").removeClass("animation1");
                  content.addClass("contentanimation").addClass("index1").removeClass("contentanimation1");
              }
-         })
+         });
+
+         var x=0;
+         $('#next').click(function(){
+            x+=1;
+            var index = 10*x;
+
+            //查询isyou数据表获取数据
+            var IsYou = Bmob.Object.extend("isyou");
+            var query = new Bmob.Query(IsYou);
+            query.skip(index);
+            query.limit(10);
+            query.descending("createdAt");
+            // 查询所有数据
+            query.find({
+                success: function(results) {
+                    if(results.length ==0)
+                    {
+                        console.log("sss");
+                        $('#toast4').css("display","block");
+                        setTimeout(function(){
+                            $('#toast4').css("display","none");
+                        },2000)
+                    }
+                    else {
+                        $(".usercontent").empty();
+                        for (var i = 0; i < results.length; i++) {
+                            var object = results[i];
+                            var src = object.get('imgurl');
+                            var name = object.get('mastername');
+                            var avatar= object.get('masteravatar');
+                            var content = object.get('content');
+                            var id = object.id
+                           // alert(object.id + ' - ' + object.get('playerName'));
+                           $(".usercontent").append("<div class='single'><img class='iyimgstyle' src="+src+" id="+id+"></img><div class='iycontentbmob'><div>"
+                           +content+"</div><div class='nickname'>"+name+
+                           "</div><img class='iyavatar' src="+avatar+"></img></div></div>")
+                        }
+                    }
+                },
+            });
+         });
 
      })
