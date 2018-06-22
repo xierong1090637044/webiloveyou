@@ -45,5 +45,6 @@ include_once '../lib/BmobBql.class.php';
 		<?php  $toast =new showToast("toast2","内容不能少于15个字！");$toast->showtoast() ?>
 		<?php  $bottom =new create();$bottom->Create() ?>
 		<?php  $bottom =new Bottomnav("2");$bottom->Bottom() ?>
+		<script type="text/javascript"></script>
 	</body>
 </html>

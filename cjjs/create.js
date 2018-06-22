@@ -1,12 +1,13 @@
 $(document).ready(function(){
 Bmob.initialize("873b0fd8dbe9e8ff02d9923fe9698bb0", "cbca9557a637b9e82093720dbcfddabf");
 
-var GameScore = Bmob.Object.extend("sanhangqs");
-var query = new Bmob.Query(GameScore);
 var arr = [];
 localStorage.setItem("unlike", JSON.stringify(arr));
 var arr = JSON.parse(localStorage.getItem("unlike"));
-// 查询所有数
+
+var GameScore = Bmob.Object.extend("sanhangqs");
+var query = new Bmob.Query(GameScore);
+query.descending("count");
 query.find({
      success: function(results) {
          console.log("共查询到 " + results.length + " 条记录");
