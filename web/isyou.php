@@ -3,6 +3,7 @@ require('../phpcj/mask.php');
 require('../phpcj/button.php');
 include_once '../phpcj/navbottom.php';
 include_once '../phpcj/showtoast.php';
+include_once '../phpcj/loading.php';
 ?>
 
 <html lang="zh-cn" class="no-js">
@@ -47,6 +48,7 @@ include_once '../phpcj/showtoast.php';
 			<?php  $button =new Button("confrim","确定" ,"buttonposition");$button->button()?>
         </div>
         <?php  $mask =new Mask;$mask->mask() ?>
+		<?php  $mask =new Loading;$mask->loading() ?>
 		<?php  $toast =new showToast("toast4","暂时没有更多数据了哦！","addtoaststyle");$toast->showtoast() ?>
         <?php  $bottom =new Bottomnav("3");$bottom->Bottom() ?>
         <script type="text/javascript"></script>

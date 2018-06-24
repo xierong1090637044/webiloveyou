@@ -59,6 +59,8 @@ include_once '../phpcj/showtoast.php';
         <?php  $toast =new showToast("toast","不能不填哦！","addtoaststyle");$toast->showtoast() ?>
         <?php  $toast =new showToast("toast1","上传成功了！","addtoaststyle");$toast->showtoast() ?>
 		<?php  $toast =new showToast("toast2","内容不能少于15个字哦！","addtoaststyle");$toast->showtoast() ?>
+		<?php  $toast =new showToast("toast3","图片尺寸最大不能超过4M哦！","addtoaststyle");$toast->showtoast() ?>
+		<?php  $toast =new showToast("toast4","请上传图片！","addtoaststyle");$toast->showtoast() ?>
 
         <script src='../srcjs/anime.min.js'></script>
         <script src='../srcjs/particles.js'></script>
@@ -67,55 +69,71 @@ include_once '../phpcj/showtoast.php';
         Bmob.initialize("873b0fd8dbe9e8ff02d9923fe9698bb0", "cbca9557a637b9e82093720dbcfddabf");
 		var height = $(window).height();
 		$(".MainMob").css('height',height);
-        $("#fileUpload").on('change', function () {
+        $("#fileUpload").on('change', function (e) {
             //获取上传文件的数量
+			var files = e.target.files[0];
             var countFiles = $(this)[0].files.length;
             var imgPath = $(this)[0].value;
+			var uploadsize = files==null?0:files.size;
+			var allowsize = 2100000;
             var extn = imgPath.substring(imgPath.lastIndexOf('.') + 1).toLowerCase();
             var image_holder = $("#image-holder");
             image_holder.empty();
-             if (extn == "gif" || extn == "png" || extn == "jpg" || extn == "jpeg") {
-                 if (typeof (FileReader) != "undefined") {
-                     // 循环所有要上传的图片
-                      for (var i = 0; i < countFiles; i++) {
-                          var reader = new FileReader();
-                          reader.onload = function (e) {
-                              $("<img />", {
-                                  "src": e.target.result,
-                                  "class": "thumb-image"
-                               }).appendTo(image_holder);
+			if(uploadsize > allowsize)
+			{
+				$('#toast3').css('display','block');
+				setTimeout(function(){
+					$('#toast3').css('display','none');
+				},2000);
+			}
+			else {
+				if (extn == "gif" || extn == "png" || extn == "jpg" || extn == "jpeg") {
+                    if (typeof (FileReader) != "undefined") {
+                        // 循环所有要上传的图片
+                         for (var i = 0; i < countFiles; i++) {
+                             var reader = new FileReader();
+                             reader.onload = function (e) {
+                                 $("<img />", {
+                                     "src": e.target.result,
+                                     "class": "thumb-image"
+                                  }).appendTo(image_holder);
 
-							   $("#noticecontent").html("重新上传");
-                           }
-                            image_holder.show();
-                            reader.readAsDataURL($(this)[0].files[i]);
-                         }
-                     } else {
-                        // alert("你的浏览器不支持FileReader！");
-                     }
-                 } else {
-                     // alert("请选择图像文件。");
-                  }
-              });
+   							   $("#noticecontent").html("重新上传");
+                              }
+                               image_holder.show();
+                               reader.readAsDataURL($(this)[0].files[i]);
+                            }
+                        }
+                    }
+			}
+		});
 
               //上传图片到bmob
               $("#upload").click(function(){
                   var fileUploadControl = $("#fileUpload")[0];
+				  var file = fileUploadControl.files[0];
+				  console.log(file);
                   var text = $('#textUpload').val();
                   var content = text.split("\n").join("<br/>");
 				  //content = text.replace(/_@/g, '<br/>');//IE9、FF、chrome
 				  content = content.replace(/\s/g, '&nbsp;');//空格处理
-                  if(fileUploadControl == "" || text =="")
+                  if(file == null)
                   {
-                     $('#toast').css('display','block');
+                     $('#toast4').css('display','block');
                      setTimeout(function(){
-                         $('#toast').css('display','none');
+                         $('#toast4').css('display','none');
                      },1000);
                   }
 				  else if (text.length <=15) {
 					  $('#toast2').css('display','block');
   					setTimeout(function(){
   						$('#toast2').css('display','none');
+  					},1000);
+				  }
+				  else if (text =="") {
+					  $('#toast').css('display','block');
+  					setTimeout(function(){
+  						$('#toast').css('display','none');
   					},1000);
 				  }
                   else {

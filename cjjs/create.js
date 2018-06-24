@@ -1,6 +1,8 @@
 $(document).ready(function(){
 Bmob.initialize("873b0fd8dbe9e8ff02d9923fe9698bb0", "cbca9557a637b9e82093720dbcfddabf");
 
+$("#loading").css('display','flex');
+
 var arr = [];
 localStorage.setItem("unlike", JSON.stringify(arr));
 var arr = JSON.parse(localStorage.getItem("unlike"));
@@ -10,6 +12,7 @@ var query = new Bmob.Query(GameScore);
 query.descending("count");
 query.find({
      success: function(results) {
+         $("#loading").css('display','none');
          console.log("共查询到 " + results.length + " 条记录");
          // 循环处理查询到的数据
          for (var i = 0; i < results.length; i++) {
@@ -34,20 +37,20 @@ query.find({
                "</div>");
 
                // var id = $(this).attr("id");
-               setTimeout(function(){
-                   var like = JSON.parse(localStorage.getItem("like"));
-                   var unlike = JSON.parse(localStorage.getItem("unlike"));
-                   for (var i = 0; i < like.length; i++) {
-                       var index = $.inArray(like[i],unlike)
-                       console.log(index);
-                       console.log(like[index]);
-                      var count = parseInt($('#'+unlike[index]).html());
-                      //$('#'+unlike[index]).html(count+1);
-                      $('#'+unlike[index]).addClass("heartAnimation");
-                   }
-                   console.log(unlike);
-               },1000)
           }
+          setTimeout(function(){
+              var like = JSON.parse(localStorage.getItem("like"));
+              var unlike = JSON.parse(localStorage.getItem("unlike"));
+              for (var i = 0; i < like.length; i++) {
+                  var index = $.inArray(like[i],unlike)
+                  console.log(index);
+                  console.log(like[index]);
+                 var count = parseInt($('#'+unlike[index]).html());
+                 //$('#'+unlike[index]).html(count+1);
+                 $('#'+unlike[index]).addClass("heartAnimation");
+              }
+              console.log(unlike);
+          },1000)
       },
   });
 
@@ -90,6 +93,9 @@ query.find({
             sanhangqs.save(null, {
                 success: function(gameScore) {
                     $('#toast1').css('display','block');
+                    $("#loading").css('display','flex');
+                    $(".orderby-item").find('#redu').removeClass('border-bottom');
+                    $(".orderby-item").find('#time').addClass('border-bottom');
                     setTimeout(function(){
                         $('#toast1').css('display','none');
                         $('#mask').css('display','none');
@@ -101,9 +107,11 @@ query.find({
                     var arr = JSON.parse(localStorage.getItem("unlike"));
                     var GameScore = Bmob.Object.extend("sanhangqs");
                     var query = new Bmob.Query(GameScore);
+                    query.descending("createdAt");
                     // 查询所有数
                     query.find({
                          success: function(results) {
+                             $("#loading").css('display','none');
                              console.log("共查询到 " + results.length + " 条记录");
                              $('.qingshu').find('.content').empty();
                              // 循环处理查询到的数据
@@ -128,21 +136,20 @@ query.find({
                                    "<div class='qsavatar'>"+"<img class='qsavatarimg' src="+avatar+"> </img> </div>"+
                                    "<div class='heart' rel='like' id="+id+">"+count+"</div>" +
                                    "</div>")
-
-                                   setTimeout(function(){
-                                       var like = JSON.parse(localStorage.getItem("like"));
-                                       var unlike = JSON.parse(localStorage.getItem("unlike"));
-                                       for (var i = 0; i < like.length; i++) {
-                                           var index = $.inArray(like[i],unlike)
-                                           console.log(index);
-                                           console.log(like[index]);
-                                          var count = parseInt($('#'+unlike[index]).html());
-                                          //$('#'+unlike[index]).html(count+1);
-                                          $('#'+unlike[index]).addClass("heartAnimation");
-                                       }
-                                       console.log(unlike);
-                                   },1500)
                               }
+                              setTimeout(function(){
+                                  var like = JSON.parse(localStorage.getItem("like"));
+                                  var unlike = JSON.parse(localStorage.getItem("unlike"));
+                                  for (var i = 0; i < like.length; i++) {
+                                      var index = $.inArray(like[i],unlike)
+                                      console.log(index);
+                                      console.log(like[index]);
+                                     var count = parseInt($('#'+unlike[index]).html());
+                                     //$('#'+unlike[index]).html(count+1);
+                                     $('#'+unlike[index]).addClass("heartAnimation");
+                                  }
+                                  console.log(unlike);
+                              },1500)
                           },
                       });
             },

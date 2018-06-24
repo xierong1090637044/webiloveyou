@@ -11,6 +11,8 @@
          $(".iybacgroundimg").css("left",width/2-95);
          $(".iybacgroundtext").css("left",width/2-95);
 
+         $('#loading').css('display','flex');
+
          //示例图片的展示功能
          var state = localStorage["state"];
          if(state ==0)
@@ -30,7 +32,6 @@
          var IsYou = Bmob.Object.extend("isyou");
          var query = new Bmob.Query(IsYou);
          query.limit(10);
-
          query.descending("createdAt");
          // 查询所有数据
          query.find({
@@ -47,6 +48,7 @@
                     +content+"</div><div class='nickname'>"+name+
                     "</div><img class='iyavatar' src="+avatar+"></img></div></div>")
                  }
+                 $('#loading').css('display','none');
              },
          });
 

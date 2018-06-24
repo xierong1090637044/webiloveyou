@@ -51,6 +51,42 @@ body
     padding: 4px;
     font-size: 13px;
 }
+.orderby-item
+{
+    position: fixed;
+    top: 5%;
+    right: 1%;
+    background: #fff;
+    padding: 8px;
+    display: none;
+}
+.orderby-time
+{
+    padding: 4px;
+    font-size: 13px;
+    border-radius: 4px;
+}
+
+.triangle_border_up{
+    border-width: 0px 10px 10px;
+    border-style: solid;
+    border-color: transparent transparent #fff;
+    /* margin: 40px auto; */
+    position: fixed;
+    top: 4%;
+    right: 2%;
+    display: none;
+}
+.border-bottom
+{
+    border-bottom: 1px solid#000;
+    border-radius: 0px;
+}
+.display
+{
+    display: block!important;
+}
+
 #stars {
   width: 1px;
   height: 1px;
