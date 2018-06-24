@@ -12,6 +12,7 @@ include_once '../phpcj/button.php';
   <link rel="stylesheet" href="../css/common.css">
   <link rel="stylesheet" href="../css/bootstrap.min.css">
   <link rel="stylesheet" href="../css/cropper.css">
+  <link rel="stylesheet"  href="../cjcss/toast.css">
 </head>
 <body>
   <div class="MobMain">
@@ -50,9 +51,12 @@ include_once '../phpcj/button.php';
             <textarea class="tellcontent" maxlength=50 placeholder="你想对他/她/它说的第一句话" id="tellcontent"></textarea></div>
 
             <?php  $button =new Button("confrim","确定" ,"buttonposition");$button->button()?>
-            <?php  $button =new Button("confrim","重置" ,"buttonposition1");$button->button()?>
+            <?php  $button =new Button("reset","重置" ,"buttonposition1");$button->button()?>
     </div>
 
+    <?php  $toast =new showToast("toast","选择图片不能超过4M哦！");$toast->showtoast() ?>
+    <?php  $toast =new showToast("toast1","内容不能有空的哦！");$toast->showtoast() ?>
+    <?php  $toast =new showToast("toast2","请上传表白墙的宣传图！");$toast->showtoast() ?>
   </div>
 
   <script type="text/javascript" src="../srcjs/jquery.min.js"></script>

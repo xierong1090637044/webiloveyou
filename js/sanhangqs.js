@@ -2,6 +2,11 @@ $(document).ready(function(){
   var height = $(window).height();
   $(document.body).css('height',height);
 
+  $(".mobilecontent").find(".qingshu").scroll(function(){
+      $(".triangle_border_up").removeClass("display");
+      $(".orderby-item").removeClass('display');
+  })
+
   $(".orderby-item").find('#redu').addClass('border-bottom');
 
   var like =  localStorage["like"];

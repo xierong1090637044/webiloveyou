@@ -75,7 +75,7 @@ include_once '../phpcj/showtoast.php';
             var countFiles = $(this)[0].files.length;
             var imgPath = $(this)[0].value;
 			var uploadsize = files==null?0:files.size;
-			var allowsize = 2100000;
+			var allowsize = 4200000;
             var extn = imgPath.substring(imgPath.lastIndexOf('.') + 1).toLowerCase();
             var image_holder = $("#image-holder");
             image_holder.empty();
