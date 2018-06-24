@@ -1,6 +1,6 @@
 <?php
 header("Content-type:text/html;charset=utf-8");
-require_once('../weixin.class.php');
+include_once ('../weixin.class.php');
 include_once '../phpcj/navbottom.php';
 include_once '../lib/BmobUser.class.php';
 include_once '../lib/BmobBql.class.php';
@@ -53,17 +53,27 @@ if($username ==null || $password ==null)
         <link rel="stylesheet"  href="../css/navbottom.css">
 		<link rel="stylesheet"  href="../css/style.css">
 		<link rel="stylesheet"  href="../css/iconfont.css">
+        <link rel="stylesheet"  href="../cjcss/danmu.css">
 		<script type="text/javascript" src="../srcjs/jquery.min.js"></script>
 		<script type="text/javascript" src="../srcjs/bmob.js"></script>
+        <script type="text/javascript" src="../cjjs/danmu.js"></script>
         <script src="../js/iconfont.js"></script>
 	</head>
 	<body ontouchstart="">
+        <div class="MobMain">
 		<div id="main" class="main">
             <div class="overplay">
                 <img src="<?php echo $info["avatar"];?>" class="avatar">
                 <div class="nickname"><?php echo $info["username"];?></div>
             </div>
 	    </div>
+
+        <!--<button id="stop" class="btn btn-primary">停止</button>-->
+        <!--<button id="open" class="btn btn-primary">弹</button>-->
+        <div class="inputdanmu">
+            <input type="text" class="form-control" name="" id="barrage_content" placeholder="发送弹幕,最多15个字" maxlength=15>
+            <button class="btn btn-primary" id="submit_barraget">发送</button>
+        </div>
 
 	      <div id = "nav" class="nav">
 	          <ul class="ul">
@@ -78,8 +88,8 @@ if($username ==null || $password ==null)
 	      <div id='shownav' class="shownav">
 	          <i class="iconfont icon-unorderedlist" style="font-size:20px"></i>
 	      </div>
-
-          <?php  $bottom =new Bottomnav("1");$bottom->Bottom() ?>
+      </div>
+        <?php  $bottom =new Bottomnav("1");$bottom->Bottom() ?>
 
 	    <script type="text/javascript">
 	  	//Bmob.initialize("Application ID", "REST API Key");
@@ -89,6 +99,7 @@ if($username ==null || $password ==null)
 	      {
 	          var height = $(window).height();
 	          $(document.body).css('height',height);
+              $(".MobMain").css('height',height);
               var state =localStorage["state"];
               if(state ==null || state =="")
               {
@@ -110,7 +121,7 @@ if($username ==null || $password ==null)
 	              $('#nav').animate({marginLeft:'-36%'},1000,'swing')
 	          }
 	      });
-
 	    </script>
+        <script type="text/javascript" src="../cjjs/creatdanmu.js"></script>
 	</body>
 </html>

@@ -2,6 +2,10 @@ body {
     margin: 0 auto;
     padding: 0 auto;
 }
+.MobMain
+{
+    overflow: hidden;
+}
 .main
 {
     width: 100%;
@@ -30,16 +34,16 @@ body {
 .shownav
 {
     position: fixed;
-    bottom: 15%;
+    top: 5%;
     right: 10%;
     width: 40px;
     height: 40px;
-    background: #a46326;
+    background: rgb(216, 183, 77);
     color: #fff;
     border-radius: 50%;
     text-align: center;
     line-height: 40px;
-    box-shadow: 0px 0px 10px #333333;
+    box-shadow: 0px 0px 10px #d9df36;
     z-index: 1000;
 }
 .avatar
@@ -97,4 +101,47 @@ body {
     font-size: 15px;
     line-height: 35px;
     border-bottom: 1px solid#fff;
+}
+
+.inputdanmu
+{
+    position: absolute;
+    bottom: 15%;
+    right: 5%;
+    font-size: 12px !important;
+}
+.barrage
+{
+    z-index:999;
+    max-width:50%;
+    padding: 4px;
+    position:fixed;
+    bottom:21%;
+    right:3%;
+    font-size:12px !important
+}
+
+@keyframes myfirst
+{
+0%  {right: 10%;}
+50% {right: 0%;}
+100% {right: 10%;}
+}
+
+@-moz-keyframes myfirst /* Firefox */
+{
+    0%  {;}
+    100%  {;}
+}
+
+@-webkit-keyframes myfirst /* Safari 和 Chrome */
+{
+    0%  {;}
+    100%  {;}
+}
+
+@-o-keyframes myfirst /* Opera */
+{
+    0%  {;}
+    100%  {;}
 }

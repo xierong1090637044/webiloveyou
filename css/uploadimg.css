@@ -11,6 +11,7 @@ input:focus,textarea:focus{
 {
     height: 100%;
     width: 100%;
+    overflow: hidden;
     background: var(--color-item-bg);
 }
 .wrapper

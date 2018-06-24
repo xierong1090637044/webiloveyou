@@ -3,6 +3,12 @@ body
     margin: unset;
 }
 
+input:focus,textarea:focus{
+    outline:medium;
+    border: 1px solid rgb(23, 44, 60);
+    border-image: unset;
+}
+
 .mask
 {
     position: fixed;

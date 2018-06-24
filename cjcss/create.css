@@ -7,10 +7,23 @@
     color: #fff;
     left: 15%;
     text-align: center;
-    background: rgb(151, 173, 172);
+    background: linear-gradient(-20deg, #f794a4 0%, #fdd6bd 100%);
     border-radius: 4px;
     display: none;
     z-index: 1000;
+}
+
+input:focus,textarea:focus{
+    outline:medium;
+    border: 1px solid rgb(23, 44, 60);
+}
+.sanhangqstitle
+{
+    width: 90px;
+    padding:4px;
+    font-size:20px;
+    color: #000;
+    padding-top: 10px;
 }
 .mask
 {
@@ -33,6 +46,13 @@
     line-height: 20px;
     text-align: center;
     border-radius: 4px;
+    display: inline-block;
+    padding: 3px 16px;
+    font-size: 12px;
+    color: #555;
+    background-color: #fff;
+    background-image: none;
+    border: 1px solid #ccc;
 }
 .textarea
 {
@@ -47,6 +67,8 @@
     border-radius: 4px;
     background: #fff;
     font-size: 15px;
+    background-image: none;
+    border: 1px solid #ccc;
 }
 .qsitem
 {

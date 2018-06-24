@@ -38,14 +38,16 @@ class Bottomnav
                        </svg>
                        <div class="name">缘来是你</div>
                      </div>
-                     <a>
+                     <a
 
+                     <a href ="havewords.php">
                      <div class= "item">
                      <svg class="icon" aria-hidden="true">
                            <use xlink:href="#icon-liuyanmoban"></use>
                        </svg>
                        <div class="name">有话想说</div>
                      </div>
+                     </a>
                   </div>
                   ';
                 break;
@@ -78,12 +80,14 @@ class Bottomnav
                              </div>
                              <a>
 
-                         <div class= "item">
-                         <svg class="icon" aria-hidden="true">
-                               <use xlink:href="#icon-liuyanmoban"></use>
-                           </svg>
-                           <div class="name">有话想说</div>
-                         </div>
+                             <a href ="havewords.php">
+                             <div class= "item">
+                             <svg class="icon" aria-hidden="true">
+                                   <use xlink:href="#icon-liuyanmoban"></use>
+                               </svg>
+                               <div class="name">有话想说</div>
+                             </div>
+                             </a>
                       </div>
                       ';
                     break;
@@ -116,12 +120,14 @@ class Bottomnav
                                  </div>
                                 <a>
 
-                             <div class= "item">
-                             <svg class="icon" aria-hidden="true">
-                                   <use xlink:href="#icon-liuyanmoban"></use>
-                               </svg>
-                               <div class="name">有话想说</div>
-                             </div>
+                                <a href ="havewords.php">
+                                <div class= "item">
+                                <svg class="icon" aria-hidden="true">
+                                      <use xlink:href="#icon-liuyanmoban"></use>
+                                  </svg>
+                                  <div class="name">有话想说</div>
+                                </div>
+                                </a>
                           </div>
                           ';
                         break;
@@ -154,12 +160,14 @@ class Bottomnav
                                      </div>
                                      <a>
 
-                                 <div class= "item1">
-                                 <svg class="icon" aria-hidden="true">
-                                       <use xlink:href="#icon-liuyanmoban"></use>
-                                   </svg>
-                                   <div class="name">有话想说</div>
-                                 </div>
+                                     <a href ="havewords.php">
+                                     <div class= "item1">
+                                     <svg class="icon" aria-hidden="true">
+                                           <use xlink:href="#icon-liuyanmoban"></use>
+                                       </svg>
+                                       <div class="name">有话想说</div>
+                                     </div>
+                                     </a>
                               </div>
                               ';
                             break;
