@@ -1,4 +1,9 @@
 Bmob.initialize("873b0fd8dbe9e8ff02d9923fe9698bb0", "cbca9557a637b9e82093720dbcfddabf");
+  var uploadimgid = localStorage["uploadimgid"];
+  if(uploadimgid !=null)
+  {
+      localStorage.removeItem('uploadimgid');
+  }
   window.addEventListener('DOMContentLoaded', function () {
     var cropBoxData;
     var canvasData;
@@ -154,7 +159,7 @@ $("#confrim").click(function()
     var objectid = localStorage["uploadimgid"]
 
     console.log(content);
-    if(tellobject =="" || tellcontent=="")
+    if(tellobject =="" || tellcontent=="" || tellcontent.length<15)
     {
         $('#toast1').css('display','block');
         setTimeout(function(){

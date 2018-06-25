@@ -4,6 +4,7 @@ $(document).ready(function()
     var height = $(window).height()*0.9;
 
     $('.mobilecontent').css('height',height);
+    $("#loading").css('display',"flex");
 
     var GameScore = Bmob.Object.extend("bbq");
     var query = new Bmob.Query(GameScore);
@@ -11,7 +12,6 @@ $(document).ready(function()
     query.find({
         success: function(results) {
             // 循环处理查询到的数据
-            $("#loading").css('display',"flex");
             for (var i = 0; i < results.length; i++) {
                 var object = results[i];
                 var mastername = object.get('mastername');
