@@ -4,7 +4,7 @@ include_once '../phpcj/navbottom.php';
 include_once '../phpcj/showtoast.php';
 include_once '../phpcj/loading.php';
 include_once '../phpcj/mask.php';
-include_once '../phpcj/Inputwithicon.php';
+include_once '../phpcj/inputwithicon.php';
 ?>
 <html lang="zh-cn">
 	<head>
