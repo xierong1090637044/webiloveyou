@@ -48,6 +48,7 @@ include_once '../phpcj/inputwithicon.php';
 		<?php  $toast =new showToast("toast2","内容不能少于15个字！");$toast->showtoast() ?>
 		<?php  $toast =new showToast("toast3","搜索内容不能为空！");$toast->showtoast() ?>
 		<?php  $toast =new showToast("toast4","查询成功！");$toast->showtoast() ?>
+		<?php  $toast =new showToast("toast5","暂时没有该表白墙！");$toast->showtoast() ?>
 		<?php  $loading =new Loading;$loading->loading() ?>
 		<?php  $mask =new Mask;$mask->mask() ?>
 		<?php  $input =new Inputwithicon("inputposition");$input->input() ?>

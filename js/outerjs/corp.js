@@ -201,19 +201,27 @@ $("#confrim").click(function()
                                 success: function(objectUpdate) {
                                     //alert("create object success, object score:"+objectUpdate.get("score"));
                                     var GameScore = Bmob.Object.extend("bbqdetails");
-                                    var gameScore = new GameScore();
                                     var User = Bmob.Object.extend("_User");
+                                    var Bbq = Bmob.Object.extend("bbq");
+                                    var gameScore = new GameScore();
+                                    var bbq = new Bbq();
                                     var user = new User();
                                     user.id = localStorage["objectid"];
+                                    bbq.id = objectid;
                                     gameScore.set("tellcontent", content);
                                     gameScore.set("username", mastername);
                                     gameScore.set("useravater", masteravatar);
                                     gameScore.set("masterbbq", objectid);
                                     gameScore.set("parent", user);
+                                    gameScore.set("parent1", bbq);
                                     gameScore.save(null, {
                                          success: function(object) {
-                                              localStorage.removeItem('uploadimgid');
-                                              window.location.href="havewords.php";
+                                             $('#toast4').css('display','block');
+                                             setTimeout(function(){
+                                                 $('#toast4').css('display','none');
+                                                 localStorage.removeItem('uploadimgid');
+                                                 window.location.href="havewords.php";
+                                             },1000);
                                          },
                                      });
                                 },
@@ -225,6 +233,11 @@ $("#confrim").click(function()
         }
     });
 })
+
+    $('#reset').click(function(){
+        $('#tellobject').val("");
+        $('#tellcontent').val("");
+    })
 
 
 });

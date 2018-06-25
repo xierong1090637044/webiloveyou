@@ -1,0 +1,256 @@
+.MobContent
+{
+    margin: unset;
+    position: relative;
+    overflow-y: scroll;
+    background:  linear-gradient(120deg, #4091ac 0%, #dec938 100%);
+}
+.header-item
+{
+    padding: 0px 4px 4px 4px;
+    margin-top: 4px;
+    float: right;
+    width: 100%;
+}
+.header-img
+{
+    width: calc(100% - 18px);
+    float: right;
+    padding: 4px;
+    border:1px solid #ddd;
+    box-shadow: 0px 5px 5px #8c6b6b;
+}
+.tellobject
+{
+    width: 20%;
+    line-height: 40px;
+    font-size: 13px;
+    text-align: center;
+    color: #780000;
+    margin: 0 auto;
+    overflow: hidden;
+    text-overflow:ellipsis;
+    white-space: nowrap;
+}
+.bgimg
+{
+    float: right;
+    width: 100%;
+    border-radius: 4px;
+    padding-bottom: 10px;
+    border-radius: 4px;
+}
+.loveimg
+{
+    width: 70px;
+    position: absolute;
+    left: calc(50% - 35px);
+    top: 8px;
+}
+.addcomment
+{
+    width: 30px;
+    position: absolute;
+    right: 10px;
+    top: 10px;
+}
+.master
+{
+    float: left;
+    width: 100%;
+}
+.masterinfo
+{
+    float: left;
+    font-size: 12px;
+    line-height: 30px;
+}
+.mastername
+{
+    font-size: 12px;
+    color: #702222;
+    margin-right: 5px;
+    width: 90px;
+    float: left;
+    overflow: hidden;
+    text-overflow:ellipsis;
+    white-space: nowrap;
+}
+.masteravatar
+{
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    float: left;
+}
+.creater-at
+{
+    float: right;
+    font-size: 12px;
+    line-height: 30px;
+}
+.comment
+{
+    float: left;
+    width: 100%;
+}
+.comment-item
+{
+    float: left;
+    width: calc(100% - 12px);
+    padding: 4px;
+    text-align: right;
+    color:rgb(32,36,46);
+    margin-bottom: 5px;
+}
+.comment-content
+{
+    float: left;
+    font-size: 12px;
+    width: 100%;
+    text-align: right;
+    padding: 5px 0px 5px 0px;
+    border-bottom: 1px solid#fff;
+}
+.comment-user
+{
+    float: left;
+    width: 100%;
+    padding: 4px 0px 4px;
+}
+.comment-username
+{
+    float: left;
+    line-height: 30px;
+    font-size: 12px;
+    margin-right: 10px;
+}
+.comment-avatar
+{
+    float: left;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+}
+.comment-ime
+{
+    float: right;
+    font-size: 12px;
+    line-height: 30px;
+}
+.toastposition
+{
+    position: fixed;
+    bottom: 10%;
+}
+
+.maincontent
+{
+    width: 70%;
+    height: auto;
+    position: fixed;
+    top:15%;
+    color: #fff;
+    left: 15%;
+    text-align: center;
+    background: linear-gradient(-20deg, #f794a4 0%, #fdd6bd 100%);
+    border-radius: 4px;
+    display: none;
+    z-index: 1000;
+}
+
+input:focus,textarea:focus{
+    outline:medium;
+    border: 1px solid rgb(23, 44, 60);
+}
+.sanhangqstitle
+{
+    width: 90px;
+    padding:4px;
+    font-size:20px;
+    color: #000;
+    padding-top: 10px;
+}
+.form
+{
+    padding: 4px;
+}
+.title
+{
+    width: 30%;
+    line-height: 20px;
+    text-align: center;
+    border-radius: 4px;
+    display: inline-block;
+    padding: 3px 16px;
+    font-size: 12px;
+    color: #555;
+    background-color: #fff;
+    background-image: none;
+    border: 1px solid #ccc;
+}
+.textarea
+{
+    width: 80%;
+    height: 150px;
+    font-size: 15px;
+    border-radius: 4px;
+}
+.submit{
+    width: 40%;
+    line-height: 30px;
+    border-radius: 4px;
+    background: #fff;
+    font-size: 15px;
+    background-image: none;
+    border: 1px solid #ccc;
+}
+.qsitem
+{
+    float: left;
+    width: 100%;
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+.qscontent
+{
+    float: right;
+    width: 60%;
+    border: 1px solid #fff;
+    border-radius: 4px;
+}
+.qscontent1
+{
+    border-bottom: 1px solid#fff;
+    padding-bottom: 5px;
+    padding-top: 5px;
+    text-align: left;
+}
+.qsavatar
+{
+    float: right;
+    margin-top: 10px;
+    margin-right: 20px;
+}
+.qsavatarimg
+{
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    border: 1px solid #ffe70a;
+    box-shadow: 0px 0px 10px #ffe70a;
+}
+.qstitle
+{
+    margin-top: 3px;
+    margin-bottom: 3px;
+    float: left;
+    font-size: 12px;
+}
+.qstime
+{
+    margin-top: 3px;
+    margin-bottom: 3px;
+    float: right;
+    font-size: 12px;
+}

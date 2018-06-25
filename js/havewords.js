@@ -44,9 +44,15 @@ $(document).ready(function()
             },2000)
         }else {
             append(inputval);
-
         }
-    })
+    });
+
+    $('body').on("click",'.bbqdetails-item',function()
+    {
+        var id = $(this).attr('id');
+        window.location.href="bbqdetails.php?objectid="+id;
+        console.log(id);
+    });
 
 })
 
@@ -68,40 +74,53 @@ function append(querycontent)
     }else {
         var GameScore = Bmob.Object.extend("bbq");
         var query = new Bmob.Query(GameScore);
+        query.descending("comment");
+        query.limit(15);
     }
     // 查询所有数据
     query.find({
         success: function(results) {
             // 循环处理查询到的数据
-            $('.bbqdetails').empty();
-            for (var i = 0; i < results.length; i++) {
-                if(querycontent !="null")
-                {
-                    $('#toast4').css('display','block');
-                    setTimeout(function(){
-                        $('#toast4').css('display','none');
-                        $('#mask').css('display','none');
-                        $('#input-ele').css('display','none');
-                    },1500);
-                }
-                var object = results[i];
-                var mastername = object.get('mastername');
-                var masteravatar = object.get('masteravatar');
-                var tellobject = object.get('tellobject');
-                var bgimg = object.get('bgimg');
-                var comment = object.get('comment');
-                var time = object.createdAt;
-                //alert(object.id + ' - ' + object.get('playerName'));
-                $('.bbqdetails').append("<div class='bbqdetails-item' id="+object.id+"><div class='frist-item'><div class='bbq-tellobject'> 告白对象："+tellobject+
-                "</div><div class='bbq-createdAt'>"+time+
-                "</div></div><img class='bbq-bgimg' src="+bgimg+"></img> <div class='bbq-masterinfo'><img class='masteravatar' src="+masteravatar+
-                "> </img> <div class='mastername'>"+mastername+
-                "</div> <div class='bbq-comment'><svg class='icon1' aria-hidden='true'><use xlink:href='#icon-liuyanzhi'></use></svg> <span class='bbq-coomment1'>"
-                +comment+
-                "</span> </div> </div> </div>");
-                $("#loading").css('display',"none");
+            if(results.length ==0)
+            {
+                $('#toast5').css('display','block');
+                setTimeout(function(){
+                    $('#toast5').css('display','none');
+                    $('#mask').css('display','none');
+                    $('#input-ele').css('display','none');
+                },1500);
+            }else {
+                $('.bbqdetails').empty();
+                for (var i = 0; i < results.length; i++) {
+                    if(querycontent !="null")
+                    {
+                        $('#toast4').css('display','block');
+                        setTimeout(function(){
+                            $('#toast4').css('display','none');
+                            $('#mask').css('display','none');
+                            $('#input-ele').css('display','none');
+                        },1500);
+                    }
+                    var object = results[i];
+                    var mastername = object.get('mastername');
+                    var masteravatar = object.get('masteravatar');
+                    var tellobject = object.get('tellobject');
+                    var bgimg = object.get('bgimg');
+                    var comment = object.get('comment');
+                    var time = object.createdAt;
+                    //alert(object.id + ' - ' + object.get('playerName'));
+                    $('.bbqdetails').append("<div class='bbqdetails-item' id="+object.id+"><div class='frist-item'><div class='bbq-tellobject'><span> 告白对象：</span><span class='bbq-tellobject1'>"+tellobject+
+                    "</span></div><div class='bbq-createdAt'>"+time+
+                    "</div></div><img class='bbq-bgimg' src="+bgimg+"></img> <div class='bbq-masterinfo'><img class='masteravatar' src="+masteravatar+
+                    "> </img> <div class='mastername'>"+mastername+
+                    "</div> <div class='bbq-comment'><svg class='icon1' aria-hidden='true'><use xlink:href='#icon-liuyanzhi'></use></svg> <span class='bbq-coomment1'>"
+                    +comment+
+                    "</span> </div> </div> </div>");
+                    $("#loading").css('display',"none");
 
+                }
             }
+
         }
     });
 }
