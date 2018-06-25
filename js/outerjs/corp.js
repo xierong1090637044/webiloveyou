@@ -149,6 +149,7 @@ $(function(){
 
 $("#confrim").click(function()
 {
+    var length;
     var tellobject = $("#tellobject").val();
     var tellcontent = $("#tellcontent").val();
     var content = tellcontent.split("\n").join("<br/>");
@@ -156,56 +157,73 @@ $("#confrim").click(function()
 
     var mastername = localStorage["username"];
     var masteravatar = localStorage["avatar"];
-    var objectid = localStorage["uploadimgid"]
+    var objectid = localStorage["uploadimgid"];
 
-    console.log(content);
-    if(tellobject =="" || tellcontent=="" || tellcontent.length<15)
-    {
-        $('#toast1').css('display','block');
-        setTimeout(function(){
-            $('#toast1').css('display','none');
-        },1000);
-    }
-    else if (objectid ==null) {
-        $('#toast2').css('display','block');
-        setTimeout(function(){
-            $('#toast2').css('display','none');
-        },1000);
-    }
-    else {
-        var GameScore = Bmob.Object.extend("bbq");
-        var query = new Bmob.Query(GameScore);
-        query.get(objectid, {
-            success: function(object) {
-                // The object was retrieved successfully.
-                object.set("mastername", mastername);
-                object.set("masteravatar", masteravatar);
-                object.set("tellobject", tellobject);
-                object.set("comment", 1);
-                object.save(null, {
-                    success: function(objectUpdate) {
-                        //alert("create object success, object score:"+objectUpdate.get("score"));
-                        var GameScore = Bmob.Object.extend("bbqdetails");
-                        var gameScore = new GameScore();
-                        var User = Bmob.Object.extend("_User");
-                        var user = new User();
-                        user.id = localStorage["objectid"];
-                        gameScore.set("tellcontent", content);
-                        gameScore.set("username", mastername);
-                        gameScore.set("useravater", masteravatar);
-                        gameScore.set("masterbbq", objectid);
-                        gameScore.set("parent", user);
-                        gameScore.save(null, {
-                             success: function(object) {
-                                  localStorage.removeItem('uploadimgid');
-                                  window.location.href="havewords.php";
-                             },
-                         });
-                    },
-                });
-            },
-        });
-    }
+    var GameScore = Bmob.Object.extend("bbq");
+    var query = new Bmob.Query(GameScore);
+    query.equalTo("tellobject", tellobject);
+    // 查询所有数据
+    query.find({
+        success: function(results) {
+            length = results.length
+            if(length >= 1)
+            {
+                $('#toast3').css('display','block');
+                setTimeout(function(){
+                    $('#toast3').css('display','none');
+                },1000);
+            }
+            else {
+                if(tellobject =="" || tellcontent=="" || tellcontent.length<15)
+                {
+                    $('#toast1').css('display','block');
+                    setTimeout(function(){
+                        $('#toast1').css('display','none');
+                    },1000);
+                }
+                else if (objectid ==null) {
+                    $('#toast2').css('display','block');
+                    setTimeout(function(){
+                        $('#toast2').css('display','none');
+                    },1000);
+                }
+                else {
+                    var GameScore = Bmob.Object.extend("bbq");
+                    var query = new Bmob.Query(GameScore);
+                    query.get(objectid, {
+                        success: function(object) {
+                            // The object was retrieved successfully.
+                            object.set("mastername", mastername);
+                            object.set("masteravatar", masteravatar);
+                            object.set("tellobject", tellobject);
+                            object.set("comment", 1);
+                            object.save(null, {
+                                success: function(objectUpdate) {
+                                    //alert("create object success, object score:"+objectUpdate.get("score"));
+                                    var GameScore = Bmob.Object.extend("bbqdetails");
+                                    var gameScore = new GameScore();
+                                    var User = Bmob.Object.extend("_User");
+                                    var user = new User();
+                                    user.id = localStorage["objectid"];
+                                    gameScore.set("tellcontent", content);
+                                    gameScore.set("username", mastername);
+                                    gameScore.set("useravater", masteravatar);
+                                    gameScore.set("masterbbq", objectid);
+                                    gameScore.set("parent", user);
+                                    gameScore.save(null, {
+                                         success: function(object) {
+                                              localStorage.removeItem('uploadimgid');
+                                              window.location.href="havewords.php";
+                                         },
+                                     });
+                                },
+                            });
+                        },
+                    });
+                }
+            }
+        }
+    });
 })
 
 

@@ -31,8 +31,40 @@ input:focus,textarea:focus{
     border: 1px solid #fff;
     text-align: center;
 }
-
-
+/* Inputwithicon*/
+.inputelement
+{
+    width: 60%;
+    padding: 4px;
+    text-align: center;
+    margin-left: 20%;
+}
+.input-icon{
+    width: 30px;
+    height: 30px;
+    float: left;
+    margin: 2px;
+}
+.inputstyle
+{
+    height: 30px;
+    width: 150px;
+    padding: 5px;
+    float: left;
+    margin: 2px;
+    margin-left: unset;
+}
+.sousuo-button
+{
+    border-image: unset;
+    width: 80px;
+    line-height: 25px;
+    border-style: unset;
+    border-color: #fff;
+    background-color: #fff;
+    margin-top: 15px;
+}
+/*loading*/
 .loadingcontainer {
   justify-content: center;
   align-items: center;

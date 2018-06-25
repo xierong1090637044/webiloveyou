@@ -57,6 +57,7 @@ include_once '../phpcj/button.php';
     <?php  $toast =new showToast("toast","选择图片不能超过4M哦！");$toast->showtoast() ?>
     <?php  $toast =new showToast("toast1","内容不能有空并且字数不能少于15个字哦！");$toast->showtoast() ?>
     <?php  $toast =new showToast("toast2","请上传表白墙的宣传图！");$toast->showtoast() ?>
+    <?php  $toast =new showToast("toast3","已有该表白墙，请勿重新创建！");$toast->showtoast() ?>
   </div>
 
   <script type="text/javascript" src="../srcjs/jquery.min.js"></script>
