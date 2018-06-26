@@ -61,6 +61,7 @@ include_once '../phpcj/showtoast.php';
 		<?php  $toast =new showToast("toast2","内容不能少于15个字哦！","addtoaststyle");$toast->showtoast() ?>
 		<?php  $toast =new showToast("toast3","图片尺寸最大不能超过4M哦！","addtoaststyle");$toast->showtoast() ?>
 		<?php  $toast =new showToast("toast4","请上传图片！","addtoaststyle");$toast->showtoast() ?>
+		<?php  $toast =new showToast("toast5","图片尺寸最小不能低于500kb哦！！","addtoaststyle");$toast->showtoast() ?>
 
         <script src='../srcjs/anime.min.js'></script>
         <script src='../srcjs/particles.js'></script>
@@ -76,6 +77,7 @@ include_once '../phpcj/showtoast.php';
             var imgPath = $(this)[0].value;
 			var uploadsize = files==null?0:files.size;
 			var allowsize = 4200000;
+			var minsize = 500000;
             var extn = imgPath.substring(imgPath.lastIndexOf('.') + 1).toLowerCase();
             var image_holder = $("#image-holder");
             image_holder.empty();
@@ -84,6 +86,12 @@ include_once '../phpcj/showtoast.php';
 				$('#toast3').css('display','block');
 				setTimeout(function(){
 					$('#toast3').css('display','none');
+				},2000);
+			}
+			else if (uploadsize < minsize) {
+				$('#toast5').css('display','block');
+				setTimeout(function(){
+					$('#toast5').css('display','none');
 				},2000);
 			}
 			else {

@@ -50,15 +50,13 @@ $(document).ready(function(){
             gameScore.set("parent1", bbq);
             gameScore.save(null, {
                  success: function(object) {
-                     $('.comment').empty();
                      $('#loading').css('display','flex');
-                     query(id);
-
                      var GameScore = Bmob.Object.extend("bbq");
                      var query1 = new Bmob.Query(GameScore);
                      query1.get(id, {
                          success: function(gameScore) {
                              // 回调中可以取得这个 GameScore 对象的一个实例，然后就可以修改它了
+                             query(id);
                              gameScore.set('comment',comment + 1);
                              gameScore.save();
                              $('#toast1').css('display','block');
@@ -66,7 +64,6 @@ $(document).ready(function(){
                                  $('#toast1').css('display','none');
                                  $('#mask').css('display','none');
                                  $('#edit').css('display','none');
-                                 query(id);
                              },1000);
                          }
                      });
@@ -79,6 +76,7 @@ $(document).ready(function(){
 
 function query(objectid)
 {
+    $('.comment').empty();
     var id = objectid;
     var GameScore = Bmob.Object.extend("bbqdetails");
     var gamescore = new GameScore();

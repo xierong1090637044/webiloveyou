@@ -1,14 +1,16 @@
 body
 {
     margin: unset;
+    height: 100%;
     position: relative;
+    overflow-x: hidden;
+    overflow: scroll;
 }
 
 .mobilecontent
 {
     width: auto;
-    height: 100%;
-    overflow: scroll;
+
     background: radial-gradient(ellipse at bottom, #1b2735 0%, #090a0f 100%);
 }
 .headeropera
@@ -196,6 +198,13 @@ body
     bottom: 5%;
     left: 29%;
     border: 1px solid#f00;
+}
+.addtoaststyle
+{
+    width: 60%;
+    position: fixed !important;
+    bottom: 20%;
+    left: 20%;
 }
 
 @keyframes myfirst5

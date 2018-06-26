@@ -27,7 +27,7 @@ include_once '../phpcj/loading.php';
         <div class="mobilecontent">
 			<div class="headeropera">
 				<a href="uploadimg.php"><div class="create" id="create"><span style="font-size:13px">上传照片</span></div></a>
-				<div class="orderby" id="next"><span style="font-size:13px">换一批</span></div>
+				<!--<div class="orderby" id="next"><span style="font-size:13px">换一批</span></div>-->
 			</div>
 			<div class="usercontent">
 			</div>
