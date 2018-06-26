@@ -19,7 +19,7 @@ include_once '../phpcj/inputwithicon.php';
 		<link href='http://fonts.googleapis.com/css?family=Lato:300,400,700' rel='stylesheet' type='text/css'>
 		<script type="text/javascript" src="../srcjs/jquery.min.js"></script>
 		<script type="text/javascript" src="../srcjs/bmob.js"></script>
-        <script type="text/javascript" src="../js/havewords.js"></script>
+        <script type="text/javascript" src="../js/webjs/havewords.js"></script>
         <script src="../js/iconfont.js"></script>
 	</head>
 	<body>

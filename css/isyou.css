@@ -186,7 +186,8 @@ body
     position: fixed;
     bottom: 7%;
     right: 5%;
-    width: 50%;
+    text-align: left;
+    width: 46%;
     overflow: hidden;
     text-overflow:ellipsis;
     white-space: nowrap;

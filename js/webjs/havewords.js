@@ -12,16 +12,30 @@ $(document).ready(function()
         $('#setting-item').animate({right:"-5.5%"})
     },1000);
 
+    var x=0;
     $('#setting').click(function(){
-        $('#setting-item').animate({right:"2%"},"fast",function(){
-            $('#setting1').css('display','block');
-            $('#setting2').css('display','block');
-            setTimeout(function(){
-                $('#setting-item').animate({right:"-5.5%"});
+        x+=1;
+        var index = x%2;
+        console.log(index);
+        if(index == 1)
+        {
+            $('#setting-item').animate({right:"2%"},"fast",function(){
+                $('#setting1').css('display','block');
+                $('#setting2').css('display','block');
+                setTimeout(function(){
+                    x=0
+                    $('#setting-item').animate({right:"-5.5%"});
+                    $('#setting1').css('display','none');
+                    $('#setting2').css('display','none');
+                },5000);
+            })
+        }
+        else {
+            $('#setting-item').animate({right:"-5.5%"},"fast",function(){
                 $('#setting1').css('display','none');
                 $('#setting2').css('display','none');
-            },5000);
-        })
+            })
+        }
     });
 
     $('#setting2').click(function(){

@@ -4,6 +4,7 @@ $(document).ready(function(){
     $('.MobContent').css('height',height);
     $('#loading').css('display','flex');
     $('.header-item').css('display','none');
+    $('.comment-fristword').css('display','none');
 
     var objectid = GetRequest("objectid");
     var id = objectid.objectid;
@@ -85,6 +86,7 @@ function query(objectid)
     query.find({
     success: function(results) {
         $('.header-item').css('display','block');
+        $('.comment-fristword').css('display','block');
         var bbq = results[0].get('parent1');
         var bgimg = bbq.get('bgimg');
         var tellobject = bbq.get('tellobject');
