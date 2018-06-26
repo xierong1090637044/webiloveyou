@@ -22,6 +22,7 @@ include_once '../phpcj/loading.php';
 		<script type="text/javascript" src="../srcjs/bmob.js"></script>
         <script src="../js/iconfont.js"></script>
         <script src="../js/isyou.js"></script>
+		<script src="../js/common.js"></script>
 	</head>
     <body>
         <div class="mobilecontent">

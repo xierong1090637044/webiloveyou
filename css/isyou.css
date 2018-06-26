@@ -10,7 +10,8 @@ body
 .mobilecontent
 {
     width: auto;
-
+    height: 100%;
+    overflow: scroll;
     background: radial-gradient(ellipse at bottom, #1b2735 0%, #090a0f 100%);
 }
 .headeropera
@@ -205,6 +206,11 @@ body
     position: fixed !important;
     bottom: 20%;
     left: 20%;
+}
+.isyoucontent
+{
+    max-height: 64%;
+    overflow: scroll;
 }
 
 @keyframes myfirst5
