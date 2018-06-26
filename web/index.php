@@ -1,6 +1,6 @@
 <?php
 header("Content-type:text/html;charset=utf-8");
-include_once ('../weixin.class.php');
+include_once '../weixin.class.php';
 include_once '../phpcj/navbottom.php';
 include_once '../lib/BmobUser.class.php';
 include_once '../lib/BmobBql.class.php';
@@ -17,18 +17,20 @@ if($username ==null || $password ==null)
 		$jumpurl = $weixin->oauth2_authorize($redirect_url, "snsapi_userinfo", "123");
 		Header("Location: $jumpurl");
 	}else{
-		$access_token_oauth2 = $weixin->oauth2_access_token($_GET["code"]);
+        $access_token_oauth2 = $weixin->oauth2_access_token($_GET["code"]);
 		$userinfo = $weixin->oauth2_get_user_info($access_token_oauth2['access_token'], $access_token_oauth2['openid']);
 		$name = $userinfo["nickname"];
 		$password = $userinfo["openid"];
+        $city = $userinfo["city"];
+        $province = $userinfo["province"];
 
         $expire=time()+60*60*24*30;
         setcookie("username", $name, $expire);
         setcookie("password", $password, $expire);
 
         try {
-            $res = $bmobUser->register(array("username"=>$userinfo["nickname"], "password"=>$userinfo["openid"],"openid"=>$userinfo["openid"],"avatar"=>str_replace("/0","/46",$userinfo["headimgurl"]),"sex"=>$userinfo["sex"]));
-        } catch (\Exception $e) {
+            $res = $bmobUser->register(array("username"=>$userinfo["nickname"], "password"=>$userinfo["openid"],"openid"=>$userinfo["openid"],"avatar"=>str_replace("/0","/46",$userinfo["headimgurl"]),"sex"=>$userinfo["sex"],"city"=>$province.$city));
+        } catch (Exception $e) {
             $res1 = $bmobUser->login($name,$password);
             $info=json_encode($res1);
             $info=json_decode($info,true);

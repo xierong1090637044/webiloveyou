@@ -12,10 +12,10 @@ include_once '../phpcj/showtoast.php';
 		<link rel="stylesheet"  href="../css/iconfont.css">
         <link rel="stylesheet"  href="../css/common.css">
         <link rel="stylesheet"  href="../cjcss/toast.css">
-        <link rel="stylesheet"  href="../css/bbqdetails.css">
+        <link rel="stylesheet"  href="../css/webcss/bbqdetails.css">
 		<script type="text/javascript" src="../srcjs/jquery.min.js"></script>
 		<script type="text/javascript" src="../srcjs/bmob.js"></script>
-        <script type="text/javascript" src="../js/bbqdetails.js"></script>
+        <script type="text/javascript" src="../js/webjs/bbqdetails.js"></script>
         <script src="../js/iconfont.js"></script>
 	</head>
 	<body ontouchstart="">
@@ -37,8 +37,10 @@ include_once '../phpcj/showtoast.php';
                  </div>
             </div>
 
-            <div class="comment">
-            </div>
+			<div class="comment-fristword">
+				<img src="../images/tamendly.png" class="tamendly" />
+			</div>
+            <div class="comment"></div>
 
             <div class ="mask" id="mask"></div>
             <div id="edit" class="maincontent">

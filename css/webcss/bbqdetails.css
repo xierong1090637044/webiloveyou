@@ -5,6 +5,14 @@
     overflow-y: scroll;
     background:  linear-gradient(120deg, #4091ac 0%, #dec938 100%);
 }
+.comment-city
+{
+    float: left;
+    text-align: left;
+    color: #fff;
+    font-size: 12px;
+    padding: 4px 4px 0px 4px;
+}
 .header-item
 {
     padding: 0px 4px 4px 4px;
@@ -92,7 +100,8 @@
 .comment
 {
     float: left;
-    width: 100%;
+    width: calc(100% - 8px);
+    padding: 4px;
 }
 .comment-item
 {
@@ -102,41 +111,52 @@
     text-align: right;
     color:rgb(32,36,46);
     margin-bottom: 5px;
+    border: 1px solid#fff;
 }
 .comment-content
 {
     float: left;
     font-size: 12px;
-    width: 100%;
-    text-align: right;
-    padding: 5px 0px 5px 0px;
+    width: calc(100% - 110px);
+    text-align: left;
+    padding: 5px 0px 5px 110px;
     border-bottom: 1px solid#fff;
+}
+.comment-fristword
+{
+    float: left;
+    padding: 10px 4px 5px 4px;
+    width: calc(100% - 8px);
+}
+.tamendly
+{
+    width: 25%;
 }
 .comment-user
 {
     float: left;
     width: 100%;
-    padding: 4px 0px 4px;
+    padding: 4px 0px 0px;
 }
 .comment-username
 {
     float: left;
-    line-height: 30px;
+    line-height: 20px;
     font-size: 12px;
     margin-right: 10px;
 }
 .comment-avatar
 {
     float: left;
-    width: 30px;
-    height: 30px;
+    width: 20px;
+    height: 20px;
     border-radius: 50%;
 }
 .comment-ime
 {
     float: right;
     font-size: 12px;
-    line-height: 30px;
+    line-height: 20px;
 }
 .toastposition
 {

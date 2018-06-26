@@ -3,6 +3,7 @@ $(document).ready(function(){
     var height = $(window).height();
     $('.MobContent').css('height',height);
     $('#loading').css('display','flex');
+    $('.header-item').css('display','none');
 
     var objectid = GetRequest("objectid");
     var id = objectid.objectid;
@@ -17,9 +18,6 @@ $(document).ready(function(){
         $('#mask').css('display','none');
         $('#edit').css('display','none');
     });
-
-
-
 
     $('#submit').click(function(){
         var cjcontent = $('#cjcontent').val();
@@ -83,8 +81,10 @@ function query(objectid)
     var query = new Bmob.Query(GameScore);
     query.equalTo("parent1", id);
     query.include("parent1");
+    query.include('parent');
     query.find({
     success: function(results) {
+        $('.header-item').css('display','block');
         var bbq = results[0].get('parent1');
         var bgimg = bbq.get('bgimg');
         var tellobject = bbq.get('tellobject');
@@ -102,13 +102,16 @@ function query(objectid)
 
         $('#loading').css('display','none');
         for (var i = 0; i < results.length; i++) {
+        var bbq = results[i].get('parent');
+        var city = bbq.get('city');
         var object = results[i];
         var comment = object.get('tellcontent');
         var username = object.get('username');
         var avatar = object.get('useravater');
         var time = object.createdAt;
 
-        $('.comment').append('<div class="comment-item"><div class="comment-content">'+comment+'</div><div class="comment-user"><div class="comment-ime">'
+        $('.comment').append('<div class="comment-item"><div class="comment-city">来自'+city+'的用户：</div><div class="comment-content">'+comment+
+        '</div><div class="comment-user"><div class="comment-ime">'
         +time+'</div><div class="comment-username">'+username+
         '</div><img class="comment-avatar" src='+avatar+
         '></img></div></div>')

@@ -31,3 +31,13 @@ function getWindowHeight(){
     }
     return windowHeight;
 }
+
+/*window.onscroll = function(){
+    if(getScrollTop() + getWindowHeight() == getScrollHeight()){
+        x+=1;
+        var number = x*10;
+       query1(number,"no");
+    }
+}*/
+
+//
