@@ -1,6 +1,6 @@
 <?php
 require_once('../weixin.class.php');
-include_once '../phpcj/navbottom.php';
+//include_once '../phpcj/navbottom.php';
 include_once '../phpcj/showtoast.php';
 include_once '../phpcj/loading.php';
 include_once '../phpcj/mask.php';
@@ -12,7 +12,7 @@ include_once '../phpcj/inputwithicon.php';
 		<meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=0">
 		<title>喂！我有话对你说</title>
 		<link rel="stylesheet"  href="../css/havewords.css">
-        <link rel="stylesheet"  href="../css/navbottom.css">
+        <!--<link rel="stylesheet"  href="../css/navbottom.css">-->
         <link rel="stylesheet"  href="../css/common.css">
 		<link rel="stylesheet"  href="../css/iconfont.css">
         <link rel="stylesheet"  href="../cjcss/toast.css">
@@ -52,7 +52,6 @@ include_once '../phpcj/inputwithicon.php';
 		<?php  $loading =new Loading;$loading->loading() ?>
 		<?php  $mask =new Mask;$mask->mask() ?>
 		<?php  $input =new Inputwithicon("inputposition");$input->input() ?>
-		<?php  $bottom =new Bottomnav("4");$bottom->Bottom() ?>
 		<script type="text/javascript"></script>
 	</body>
 </html>

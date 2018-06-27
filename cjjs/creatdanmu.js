@@ -1,6 +1,7 @@
 // 数据初始化 弹幕功能的添
 var GameScore = Bmob.Object.extend("danmulist");
 var query = new Bmob.Query(GameScore);
+query.descending("createdAt");
 var data = [];
 // 查询所有数据
 query.find({

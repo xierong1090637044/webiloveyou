@@ -1,7 +1,6 @@
 <?php
 require('../phpcj/mask.php');
 require('../phpcj/button.php');
-include_once '../phpcj/navbottom.php';
 include_once '../phpcj/showtoast.php';
 include_once '../phpcj/loading.php';
 ?>
@@ -15,7 +14,7 @@ include_once '../phpcj/loading.php';
 		<meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=0">
 		<title>缘来是你</title>
         <link rel="stylesheet" type="text/css" href="../css/isyou.css" />
-        <link rel="stylesheet"  href="../css/navbottom.css">
+        <!--<link rel="stylesheet"  href="../css/navbottom.css">-->
 		<link rel="stylesheet"  href="../css/common.css">
 		<link rel="stylesheet"  href="../cjcss/toast.css">
 		<script type="text/javascript" src="../srcjs/jquery.min.js"></script>
@@ -51,7 +50,6 @@ include_once '../phpcj/loading.php';
         <?php  $mask =new Mask;$mask->mask() ?>
 		<?php  $mask =new Loading;$mask->loading() ?>
 		<?php  $toast =new showToast("toast4","暂时没有更多数据了哦！","addtoaststyle");$toast->showtoast() ?>
-        <?php  $bottom =new Bottomnav("3");$bottom->Bottom() ?>
         <script type="text/javascript"></script>
 	</body>
 </html>

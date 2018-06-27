@@ -1,7 +1,7 @@
 $(document).ready(function()
 {
     Bmob.initialize("873b0fd8dbe9e8ff02d9923fe9698bb0", "cbca9557a637b9e82093720dbcfddabf");
-    var height = $(window).height()*0.9;
+    var height = $(window).height();
 
     $('.mobilecontent').css('height',height);
     $("#loading").css('display',"flex");
@@ -16,7 +16,6 @@ $(document).ready(function()
     $('#setting').click(function(){
         x+=1;
         var index = x%2;
-        console.log(index);
         if(index == 1)
         {
             $('#setting-item').animate({right:"2%"},"fast",function(){

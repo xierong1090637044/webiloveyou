@@ -77,6 +77,7 @@
          window.onscroll = function(){
              if(getScrollTop() + getWindowHeight() == getScrollHeight()){
                  x+=1;
+                 console.log(x);
                  var number = x*10;
                 query1(number,"no");
              }

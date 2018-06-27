@@ -9,6 +9,7 @@ var arr = JSON.parse(localStorage.getItem("unlike"));
 
 var GameScore = Bmob.Object.extend("sanhangqs");
 var query = new Bmob.Query(GameScore);
+query.limit(20);
 query.descending("count");
 query.find({
      success: function(results) {
@@ -108,6 +109,7 @@ query.find({
                     var GameScore = Bmob.Object.extend("sanhangqs");
                     var query = new Bmob.Query(GameScore);
                     query.descending("createdAt");
+                    query.limit(20); 
                     // 查询所有数
                     query.find({
                          success: function(results) {

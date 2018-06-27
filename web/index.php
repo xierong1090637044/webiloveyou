@@ -1,7 +1,7 @@
 <?php
 header("Content-type:text/html;charset=utf-8");
 include_once '../weixin.class.php';
-include_once '../phpcj/navbottom.php';
+include_once '../phpcj/indexcaidan.php';
 include_once '../lib/BmobUser.class.php';
 include_once '../lib/BmobBql.class.php';
 
@@ -52,46 +52,41 @@ if($username ==null || $password ==null)
 		<meta http-equiv="Expires" content="0" />
 		<title>别来无恙</title>
 		<link rel="stylesheet"  href="../css/reset.css">
-        <link rel="stylesheet"  href="../css/navbottom.css">
 		<link rel="stylesheet"  href="../css/style.css">
 		<link rel="stylesheet"  href="../css/iconfont.css">
-        <link rel="stylesheet"  href="../cjcss/danmu.css">
+        <!--<link rel="stylesheet"  href="../cjcss/danmu.css">-->
 		<script type="text/javascript" src="../srcjs/jquery.min.js"></script>
 		<script type="text/javascript" src="../srcjs/bmob.js"></script>
-        <script type="text/javascript" src="../cjjs/danmu.js"></script>
+        <!--<script type="text/javascript" src="../cjjs/danmu.js"></script>-->
         <script src="../js/iconfont.js"></script>
 	</head>
 	<body ontouchstart="">
+
+        <div id="stars" class="stars">
+            <div class="star" style="top: 0px;left: 520px;"></div>
+        </div>
         <div class="MobMain">
+
 		<div id="main" class="main">
             <div class="overplay">
                 <img src="<?php echo $info["avatar"];?>" class="avatar">
                 <div class="nickname"><?php echo $info["username"];?></div>
             </div>
+            <div class="thisisxk">
+                <img src="../images/thisxk.png" class="thisisxkimg"/>
+            </div>
 	    </div>
+
+        <img src="../images/welook.png" class="welook" style="width:28%;"/>
+        <?php  $bottom =new Caidan();$bottom->caidan() ?>
 
         <!--<button id="stop" class="btn btn-primary">停止</button>-->
         <!--<button id="open" class="btn btn-primary">弹</button>-->
-        <div class="inputdanmu">
+        <!--<div class="inputdanmu">
             <input type="text" class="form-control" name="" id="barrage_content" placeholder="发送弹幕,最多15个字" maxlength=15>
             <button class="btn btn-primary" id="submit_barraget">发送</button>
-        </div>
-
-	      <div id = "nav" class="nav">
-	          <ul class="ul">
-                  <li><img src="<?php echo $info["avatar"];?>" class="avatarli"></li>
-                  <li class="nicknameli"><?php echo $info["username"];?></li>
-	              <a href="../funny/love_heart/index.html"><li class="daohang">our love story</li><a>
-	              <li class="daohang1">导航</li>
-	              <li class="daohang1">导航</li>
-	          </ul>
-	      </div>
-
-	      <div id='shownav' class="shownav">
-	          <i class="iconfont icon-unorderedlist" style="font-size:20px"></i>
-	      </div>
+        </div>-->
       </div>
-        <?php  $bottom =new Bottomnav("1");$bottom->Bottom() ?>
 
 	    <script type="text/javascript">
 	  	//Bmob.initialize("Application ID", "REST API Key");
@@ -123,7 +118,31 @@ if($username ==null || $password ==null)
 	              $('#nav').animate({marginLeft:'-36%'},1000,'swing')
 	          }
 	      });
+
+          var stars = document.getElementById('stars')
+          var star = document.getElementsByClassName('star')
+          // js随机生成流星
+          for (var j = 0; j < 15; j++) {
+              var newStar = document.createElement("div")
+              newStar.className = "star"
+              newStar.style.top = randomDistance(30, -30) + 'px'
+              newStar.style.left = randomDistance(150, 20) + 'px'
+              stars.appendChild(newStar)
+          }
+          // 封装随机数方法
+          function randomDistance(max, min) {
+              var distance = Math.floor(Math.random() * (max - min + 1) * 10 + min)
+              return distance
+          }
+          // 给流星添加动画延时
+          for (var i = 0, len = star.length; i < len; i++) {
+              if (i % 6 == 0) {
+                  star[i].style.animationDelay = '0s'
+              } else {
+                  star[i].style.animationDelay = i * 2 + 's'
+              }
+          }
 	    </script>
-        <script type="text/javascript" src="../cjjs/creatdanmu.js"></script>
+        <!--<script type="text/javascript" src="../cjjs/creatdanmu.js"></script>-->
 	</body>
 </html>

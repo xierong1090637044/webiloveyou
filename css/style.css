@@ -1,10 +1,12 @@
 body {
     margin: 0 auto;
-    padding: 0 auto;
+    position: relative;
+    overflow: hidden;
 }
 .MobMain
 {
     overflow: hidden;
+    background: #469e8c;
 }
 .main
 {
@@ -49,7 +51,7 @@ body {
 .avatar
 {
     border-radius: 50%;
-    width: 40px;
+    width: 25%;
     border: 1px solid #ffcc66;
     box-shadow: 0px 0px 10px #ffcc66;
     margin-top: 20%;
@@ -86,7 +88,25 @@ body {
 {
     height: 100%;
     width: 40%;
+    float: left;
     text-align: center;
+}
+.thisisxk
+{
+    float: right;
+    height: 100%;
+    width: 40%;
+    text-align: right;
+}
+.thisisxkimg
+{
+    width: 50%;
+}
+.welook
+{
+    position: absolute;
+    bottom: 0%;
+    left: 3%;
 }
 .daohang
 {
@@ -106,7 +126,7 @@ body {
 .inputdanmu
 {
     position: absolute;
-    bottom: 15%;
+    bottom: 3%;
     right: 5%;
     font-size: 12px !important;
 }
@@ -116,10 +136,55 @@ body {
     max-width:50%;
     padding: 4px;
     position:fixed;
-    bottom:21%;
+    bottom:8%;
     right:3%;
     font-size:12px !important
 }
+
+/*菜单*/
+.navmain
+{
+    width: 100%;
+    float: left;
+    background:#f27979;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    margin-top: 6%;
+    position: absolute;
+    z-index: 1000;
+}
+.item
+{
+    width: calc(25% - 14px);
+    text-align: center;
+    float: left;
+    border:1px solid#fff;
+    margin: 3px;
+    background: #8b6060;
+    padding: 3px;
+}
+.icon{
+        width: 30px;
+        height: 30px;
+        vertical-align: middle;
+        fill: currentColor;
+        overflow: hidden;
+        margin-top: 8px;
+}
+.name{
+    margin-top: 2px;
+    font-size: 10px;
+    color: #fff;
+}
+.stars
+{
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+    z-index: 100;
+}
+
 
 @keyframes myfirst
 {
@@ -145,3 +210,52 @@ body {
     0%  {;}
     100%  {;}
 }
+
+.star {
+      display: block;
+　　　 width: 1px;
+      background: transparent;
+      position: relative;
+      opacity: 0;
+      /*过渡动画*/
+      animation: star-fall 3s linear infinite;
+      -webkit-animation: star-fall 3s linear infinite;
+      -moz-animation: star-fall 3s linear infinite;
+    }
+
+    .star:after {
+      content: '';
+      display: block;
+      border: 0px solid #fff;
+      border-width: 0px 90px 2px 90px;
+      border-color: transparent transparent transparent rgba(255, 255, 255, .5);
+      box-shadow: 0 0 1px 0 rgba(255, 255, 255, .1);
+      /*变形*/
+      transform: rotate(-45deg) translate3d(1px, 3px, 0);
+      -webkit-transform: rotate(-45deg) translate3d(1px, 3px, 0);
+      -moz-transform: rotate(-45deg) translate3d(1px, 3px, 0);
+      transform-origin: 0% 100%;
+      -webkit-transform-origin: 0% 100%;
+      -moz-transform-origin: 0% 100%;
+    }
+
+    @keyframes star-fall {
+      0% {
+        opacity: 0;
+        transform: scale(0.5) translate3d(0, 0, 0);
+        -webkit-transform: scale(0.5) translate3d(0, 0, 0);
+        -moz-transform: scale(0.5) translate3d(0, 0, 0);
+      }
+      50% {
+        opacity: 1;
+        transform: translate3d(-200px, 200px, 0);
+        -webkit-transform: translate3d(-200px, 200px, 0);
+        -moz-transform: translate3d(-200px, 200px, 0);
+      }
+      100% {
+        opacity: 0;
+        transform: scale(1.2) translate3d(-300px, 300px, 0);
+        -webkit-transform: scale(1.2) translate3d(-300px, 300px, 0);
+        -moz-transform: scale(1.2) translate3d(-300px, 300px, 0);
+      }
+    }

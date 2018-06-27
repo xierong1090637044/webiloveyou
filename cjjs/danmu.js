@@ -1,14 +1,4 @@
 
-/**
-
-	姓名：冯宇
-	site: http://fy.035k.com
-	更新时间 ：2018-04-03
-	QQ : 515184405
-	github : https://github.com/515184405/barrage 还有一些其他的项目哦，欢迎star
-
-**/
-
 	$.fn.barrage = function(opt){
 
 		var _self = $(this);

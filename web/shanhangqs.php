@@ -1,6 +1,5 @@
 <?php
 require_once('../weixin.class.php');
-include_once '../phpcj/navbottom.php';
 include_once '../phpcj/showtoast.php';
 include_once '../phpcj/create_edit.php';
 include_once '../lib/BmobUser.class.php';
@@ -16,8 +15,7 @@ include_once '../phpcj/loading.php';
 		<meta http-equiv="Pragma" content="no-cache" />
 		<meta http-equiv="Expires" content="0" />
 		<title>三行情书</title>
-		<link rel="stylesheet"  href="../css/sanhangqs.css">
-        <link rel="stylesheet"  href="../css/navbottom.css">
+		<link rel="stylesheet"  href="../css/webcss/sanhangqs.css">
 		<link rel="stylesheet"  href="../css/iconfont.css">
 		<link rel="stylesheet"  href="../cjcss/create.css">
 		<link rel="stylesheet"  href="../cjcss/toast.css">
@@ -26,8 +24,9 @@ include_once '../phpcj/loading.php';
 		<script type="text/javascript" src="../srcjs/jquery.min.js"></script>
 		<script type="text/javascript" src="../cjjs/create.js"></script>
 		<script type="text/javascript" src="../srcjs/bmob.js"></script>
-		<script type="text/javascript" src="../js/sanhangqs.js"></script>
+		<script type="text/javascript" src="../js/webjs/sanhangqs.js"></script>
         <script src="../js/iconfont.js"></script>
+		<script src="../js/common.js"></script>
 	</head>
 	<body>
 		<div class="mobilecontent">
@@ -53,7 +52,6 @@ include_once '../phpcj/loading.php';
 		<?php  $toast =new showToast("toast2","内容不能少于15个字！");$toast->showtoast() ?>
 		<?php  $bottom =new create();$bottom->Create() ?>
 		<?php  $mask =new Loading;$mask->loading() ?>
-		<?php  $bottom =new Bottomnav("2");$bottom->Bottom() ?>
 		<script type="text/javascript"></script>
 	</body>
 </html>

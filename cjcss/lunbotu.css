@@ -1,0 +1,78 @@
+.banner {
+	width:500px;
+	height:300px;
+	margin:150px auto;
+	position:relative;
+	overflow:hidden;
+	cursor:pointer;
+}
+.banner ul {
+	list-style:none;
+	width:700%;
+	height:300px;
+	position:absolute;
+}
+.banner ul li {
+	width:500px;
+	height:300px;
+	float:left;
+}
+.banner ul li img {
+	width:100%;
+	height:100%;
+}
+.banner .arrow .left,.banner .arrow .right {
+	width:40px;
+	height:80px;
+	background:#000000;
+	opacity:0.3;
+	position:absolute;
+	top:50%;
+	transform:translateY(-50%);
+	font-family:"宋体";
+	font-size:52px;
+	color:#fff;
+	line-height:80px;
+	text-align:center;
+}
+.arrow .left {
+	left:0px;
+}
+.arrow .right {
+	right:0px;
+}
+.banner .arrow {
+	display:none;
+}
+/*鼠标经过盒子，让箭头显示出来*/
+		    .banner:hover .arrow {
+	display:block;
+	cursor:pointer;
+}
+/*小圆点样式*/
+		   .banner ol {
+	list-style:none;
+	width:200px;
+	height:20px;
+	background:#222222;
+	position:absolute;
+	bottom:50px;
+	left:50%;
+	transform:translateX(-50%);
+	/*opacity:0.3;
+	*/
+		    border-radius:10px;
+}
+.banner ol li {
+	width:10px;
+	height:10px;
+	background:#fff;
+	border-radius:50%;
+	float:left;
+	margin-left:21px;
+	margin-top:5px;
+	cursor:pointer;
+}
+.banner ol .now {
+	background:aqua;
+}
