@@ -36,6 +36,9 @@ include_once '../phpcj/loading.php';
 			</div>
 			<div class="qingshu">
 				<div class="content"></div>
+				<div class="getmore" id='getmore'>
+					<img src="../images/getmore.png" style="width:45%"/>
+				</div>
 			</div>
 
 			<div class="triangle_border_up"></div>

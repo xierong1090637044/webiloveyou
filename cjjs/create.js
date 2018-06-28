@@ -15,6 +15,9 @@ query.find({
      success: function(results) {
          $("#loading").css('display','none');
          console.log("共查询到 " + results.length + " 条记录");
+         if (results.length == 20) {
+             $('#getmore').css('display','block')
+         }
          // 循环处理查询到的数据
          for (var i = 0; i < results.length; i++) {
               var object = results[i];
@@ -109,7 +112,7 @@ query.find({
                     var GameScore = Bmob.Object.extend("sanhangqs");
                     var query = new Bmob.Query(GameScore);
                     query.descending("createdAt");
-                    query.limit(20); 
+                    query.limit(20);
                     // 查询所有数
                     query.find({
                          success: function(results) {

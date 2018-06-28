@@ -19,7 +19,26 @@ article, aside, details, figcaption, figure, footer, header, hgroup, nav, sectio
 audio, canvas, video { display: inline-block; *display: inline; *zoom: 1; }
 audio:not([controls]) { display: none; }
 [hidden] { display: none; }
-
+a
+{
+    text-decoration: none;
+    color:#fff;
+    cursor: unset;
+    outline:none;
+}
+a:focus{outline:none;}
+a:active{
+    background: #f27979
+}
+a:visited
+{
+    color: #fff;outline:none;
+}
+input:focus,textarea:focus{
+    outline:medium;
+    border: 1px solid rgb(23, 44, 60);
+    border-image: unset;
+}
 
 /* =============================================================================
    Base

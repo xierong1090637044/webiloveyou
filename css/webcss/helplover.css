@@ -1,0 +1,20 @@
+.MobMain
+{
+    height: 100%;
+    background: #285e58;
+}
+.header-item
+{
+    padding: 8px 4px 8px 4px;
+    float: right;
+    width: calc(100% - 8px);
+    height: 10%;
+}
+.whereis
+{
+    float: left;
+    text-align: left;
+    margin-left: 10%;
+    font-size: 12px;
+    color: #fff;
+}

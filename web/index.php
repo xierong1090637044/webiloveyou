@@ -1,6 +1,8 @@
 <?php
 header("Content-type:text/html;charset=utf-8");
 include_once '../weixin.class.php';
+include_once '../phpcj/mask.php';
+include_once '../phpcj/button.php';
 include_once '../phpcj/indexcaidan.php';
 include_once '../lib/BmobUser.class.php';
 include_once '../lib/BmobBql.class.php';
@@ -52,12 +54,12 @@ if($username ==null || $password ==null)
 		<meta http-equiv="Expires" content="0" />
 		<title>别来无恙</title>
 		<link rel="stylesheet"  href="../css/reset.css">
+        <link rel="stylesheet"  href="../css/common.css">
 		<link rel="stylesheet"  href="../css/style.css">
+        <link rel="stylesheet"  href="../css/duihuakuang.css">
 		<link rel="stylesheet"  href="../css/iconfont.css">
-        <!--<link rel="stylesheet"  href="../cjcss/danmu.css">-->
 		<script type="text/javascript" src="../srcjs/jquery.min.js"></script>
 		<script type="text/javascript" src="../srcjs/bmob.js"></script>
-        <!--<script type="text/javascript" src="../cjjs/danmu.js"></script>-->
         <script src="../js/iconfont.js"></script>
 	</head>
 	<body ontouchstart="">
@@ -79,13 +81,37 @@ if($username ==null || $password ==null)
 
         <img src="../images/welook.png" class="welook" style="width:28%;"/>
         <?php  $bottom =new Caidan();$bottom->caidan() ?>
+        <div class="helplover">
+                <div class="changelife">一份爱心，都有可能改变他们的命运</div>
+                <img src="../images/helplover/flyherat.png" style="float:right;width:10%;margin-top:2px;margin-right:2%;" />
+                <img id ='header-img' src="../images/helplover/frist.png" style="width:100%;border-radius:4px"/>
+        </div>
 
-        <!--<button id="stop" class="btn btn-primary">停止</button>-->
-        <!--<button id="open" class="btn btn-primary">弹</button>-->
-        <!--<div class="inputdanmu">
-            <input type="text" class="form-control" name="" id="barrage_content" placeholder="发送弹幕,最多15个字" maxlength=15>
-            <button class="btn btn-primary" id="submit_barraget">发送</button>
-        </div>-->
+        <div class="header-item">
+            <img src="../images/helplover/logo.png" style="width:30%;float:left"/>
+            <div class="whereis">
+                <div>网址：http://www.unicef.cn/cn/</div>
+                <div>微信号：联合国儿童基金会</div>
+            </div>
+            <div class="jianjie">
+                <img src="../images/helplover/1.png" style="width:100%;float:left;margin-top:5%"/>
+            </div>
+            <div class="header-text">更多详情,请去他们的官网或者微信号</div>
+        </div>
+
+        <div class="talk-bubble-index tri-right border round btm-left-in" id='woman'>
+          <div class="talktext">
+            <p style ='font-size:12px'>笑，全世界便与你同声笑，哭，你便独自哭。所以请坚强，陌生人</p>
+          </div>
+        </div>
+
+        <div class="talk-bubble-index-1 tri-right round border right-top" id='man'>
+          <div class="talktext">
+            <p style="font-size:12px;color:#4b1111">也许爱不是热情，也不是怀念，</br>不过是岁月，年深月久成了生活的一部分。</p>
+          </div>
+        </div>
+        <?php  $mask =new Mask;$mask->mask() ?>
+        <?php  $mask =new Button('guanbi','关闭','header-button');$mask->button() ?>
       </div>
 
 	    <script type="text/javascript">
@@ -105,19 +131,41 @@ if($username ==null || $password ==null)
               localStorage["objectid"]="<?php echo $info["objectId"];?>";
               localStorage["username"]="<?php echo $info["username"];?>";
               localStorage["avatar"]="<?php echo $info["avatar"];?>";
+
+              setTimeout(function(){
+                  $('#man').fadeIn('slow',function(){
+                      setTimeout(function(){
+                          $('#man').fadeOut('slow');
+                      },5000)
+                  });
+              },5000);
+
+              setTimeout(function(){
+                  $('#woman').fadeIn('slow',function(){
+                      setTimeout(function(){
+                          $('#woman').fadeOut('slow');
+                      },5000)
+                  });
+              },7000)
           })
 
-	      var navindex = true;
-	      $('#shownav').click(function(){
-	          if (navindex) {
-	              navindex = false;
-	              $('#nav').animate({marginLeft:'0%'},1000,'swing')
-	          }
-	          else {
-	              navindex = true;
-	              $('#nav').animate({marginLeft:'-36%'},1000,'swing')
-	          }
-	      });
+          $('#header-img').click(function(){
+              $('#mask').css('display','block');
+              $('#guanbi').css('display','block');
+              $('.header-item').css('display','block');
+          });
+
+          $('#mask').click(function(){
+              $('#mask').css('display','none');
+              $('#guanbi').css('display','none');
+              $('.header-item').css('display','none');
+          });
+
+          $('#guanbi').click(function(){
+              $('#mask').css('display','none');
+              $('#guanbi').css('display','none');
+              $('.header-item').css('display','none');
+          });
 
           var stars = document.getElementById('stars')
           var star = document.getElementsByClassName('star')
@@ -143,6 +191,6 @@ if($username ==null || $password ==null)
               }
           }
 	    </script>
-        <!--<script type="text/javascript" src="../cjjs/creatdanmu.js"></script>-->
+
 	</body>
 </html>
