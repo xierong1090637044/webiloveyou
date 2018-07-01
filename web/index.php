@@ -1,11 +1,11 @@
 <?php
-header("Content-type:text/html;charset=utf-8");
 include_once '../weixin.class.php';
+include_once '../phpcj/showtoast.php';
 include_once '../phpcj/mask.php';
+include_once '../phpcj/qrcodeshow.php';
 include_once '../phpcj/button.php';
 include_once '../phpcj/indexcaidan.php';
 include_once '../lib/BmobUser.class.php';
-include_once '../lib/BmobBql.class.php';
 
 $weixin = new class_weixin();
 $bmobUser = new BmobUser();
@@ -58,8 +58,10 @@ if($username ==null || $password ==null)
 		<link rel="stylesheet"  href="../css/style.css">
         <link rel="stylesheet"  href="../css/duihuakuang.css">
 		<link rel="stylesheet"  href="../css/iconfont.css">
+        <link rel="stylesheet"  href="../cjcss/toast.css">
 		<script type="text/javascript" src="../srcjs/jquery.min.js"></script>
 		<script type="text/javascript" src="../srcjs/bmob.js"></script>
+        <script type="text/javascript" src="../cjjs/qrcode.js"></script>
         <script src="../js/iconfont.js"></script>
 	</head>
 	<body ontouchstart="">
@@ -133,6 +135,8 @@ if($username ==null || $password ==null)
           </div>
         </div>
         <?php  $mask =new Mask;$mask->mask() ?>
+        <?php  $toast =new showToast("toast","内容不能为空哦！");$toast->showtoast() ?>
+        <?php  $mask =new Qrcode;$mask->qrcode() ?>
         <?php  $mask =new Button('guanbi','关闭','header-button');$mask->button() ?>
       </div>
 
@@ -203,10 +207,7 @@ if($username ==null || $password ==null)
               $('#mask').css('display','none');
               $('#guanbi').css('display','none');
               $('.header-item').css('display','none');
-          });
-
-          $('#sky').click(function(){
-              console.log("sss");
+              $('#qrcode').css('display','none');
           });
 
           $('#guanbi').click(function(){
