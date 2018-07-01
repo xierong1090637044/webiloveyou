@@ -87,6 +87,22 @@ if($username ==null || $password ==null)
                 <img id ='header-img' src="../images/helplover/frist.png" style="width:100%;border-radius:4px"/>
         </div>
 
+        <div id="sky">
+			<div class="bird">
+				<div class="bird_body">
+					<div class="bird_head"></div>
+					<div class="bird_wing_left">
+						<div class="bird_wing_left_top"></div>
+					</div>
+					<div class="bird_wing_right">
+						<div class="bird_wing_right_top"></div>
+					</div>
+					<div class="bird_tail_left"></div>
+					<div class="bird_tail_right"></div>
+				</div>
+			</div>
+		</div>
+
         <div class="header-item">
             <img src="../images/helplover/logo.png" style="width:30%;float:left"/>
             <div class="whereis">
@@ -108,6 +124,12 @@ if($username ==null || $password ==null)
         <div class="talk-bubble-index-1 tri-right round border right-top" id='man'>
           <div class="talktext">
             <p style="font-size:12px;color:#4b1111">也许爱不是热情，也不是怀念，</br>不过是岁月，年深月久成了生活的一部分。</p>
+          </div>
+        </div>
+
+        <div class="talk-bubble-index-2 tri-right round border right-top" id='flybrid'>
+          <div class="talktext">
+            <p style="font-size:12px;color:#4b1111">你好，我是“小鹤”</br>接下来暂时由我担任您的吉祥物！</p>
           </div>
         </div>
         <?php  $mask =new Mask;$mask->mask() ?>
@@ -132,9 +154,20 @@ if($username ==null || $password ==null)
               localStorage["username"]="<?php echo $info["username"];?>";
               localStorage["avatar"]="<?php echo $info["avatar"];?>";
 
+              var flybrid = localStorage['flybrid'];
+              if(flybrid ==1)
+              {
+                  $('#sky').addClass('sky');
+              }
+
               setTimeout(function(){
                   $('#man').fadeIn('slow',function(){
                       setTimeout(function(){
+                          var state = localStorage['flybrid'];
+                          if(state ==''||state ==null)
+                          {
+                              localStorage["flybrid"] = 0;
+                          }
                           $('#man').fadeOut('slow');
                       },5000)
                   });
@@ -144,6 +177,17 @@ if($username ==null || $password ==null)
                   $('#woman').fadeIn('slow',function(){
                       setTimeout(function(){
                           $('#woman').fadeOut('slow');
+                          var bridstate = localStorage["flybrid"];
+                          if(bridstate ==0)
+                          {
+                              $('#flybrid').fadeIn('slow');
+                              $('#sky').fadeIn('slow',function(){
+                                  localStorage["flybrid"] = 1;
+                                  $('#flybrid').fadeOut(5000);
+                                  $('#sky').animate({top:'88%',right:'22%'},5000,function(){
+                                  });
+                              });
+                          }
                       },5000)
                   });
               },7000)
@@ -159,6 +203,10 @@ if($username ==null || $password ==null)
               $('#mask').css('display','none');
               $('#guanbi').css('display','none');
               $('.header-item').css('display','none');
+          });
+
+          $('#sky').click(function(){
+              console.log("sss");
           });
 
           $('#guanbi').click(function(){

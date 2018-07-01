@@ -1,5 +1,4 @@
 <?php
-require_once('../weixin.class.php');
 //include_once '../phpcj/navbottom.php';
 include_once '../phpcj/showtoast.php';
 include_once '../phpcj/loading.php';

@@ -31,6 +31,18 @@
     background-color: #ffffa4;
     display: none;
 }
+.talk-bubble-index-2 {
+    margin: 4px;
+    display: inline-block;
+    position: absolute;
+    width: 200px;
+    top: 13%;
+    right: 44%;
+    z-index: 1000;
+    height: auto;
+    background-color: #ffffa4;
+	display: none;
+}
 .border{
   border: 1px solid #666;
 }

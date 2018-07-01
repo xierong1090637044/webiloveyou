@@ -1,10 +1,10 @@
 <?php
-require_once('../weixin.class.php');
 include_once '../phpcj/showtoast.php';
 include_once '../phpcj/create_edit.php';
 include_once '../lib/BmobUser.class.php';
 include_once '../lib/BmobBql.class.php';
 include_once '../phpcj/loading.php';
+
 ?>
 
 <html lang="zh-cn">

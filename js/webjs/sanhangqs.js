@@ -33,6 +33,11 @@ $(document).ready(function(){
       $('#mask').css('display',"none");
   });
 
+  $(".mobilecontent").scroll(function(){
+      $(".triangle_border_up").removeClass("display");
+      $(".orderby-item").removeClass("display");
+  });
+
  //点赞动作
   $('body').on("click",'.heart',function()
   {
@@ -150,17 +155,19 @@ $(document).ready(function(){
                  var name = object.get("username");
                  var avatar = object.get("avatar");
                  var count = object.get("count");
+                 var type = object.get('type');
                  var time = object.createdAt;
                  var id = object.id;
                 // console.log(object.id + ' - ' + object.get('content'));
-                 $('.qingshu').find('.content').append("<div class='qsitem'> <div class='qscontent'>"+
-                  "<div class='qscontent1'> <text>"+content+"</text> </div>"+
-                  "<span class='qstitle'>"+title+"</span>"+
-                  "<span class='qstime'>"+time+"</span>"+
-                  "</div>"+
-                  "<div class='qsavatar'>"+"<img class='qsavatarimg' src="+avatar+"> </img> </div>"+
-                  "<div class='heart' rel='like' id="+id+">"+count+"</div>" +
-                  "</div>");
+                $('.qingshu').find('.content').append("<div class='qsitem'> <div class='qscontent'>"+
+                 "<div class='qscontent1'> <div>"+content+"</div><div class='tyle'><span class='biaoqian'>标签：</span><span class='typestyle'>"+type+
+                 "</span></div> </div>"+
+                 "<span class='qstitle'>"+title+"</span>"+
+                 "<span class='qstime'>"+time+"</span>"+
+                 "</div>"+
+                 "<div class='qsavatar'>"+"<img class='qsavatarimg' src="+avatar+"> </img> </div>"+
+                 "<div class='heart' rel='like' id="+id+">"+count+"</div>" +
+                 "</div>");
 
                   // var id = $(this).attr("id");
                   setTimeout(function(){
@@ -211,17 +218,19 @@ $(document).ready(function(){
                  var name = object.get("username");
                  var avatar = object.get("avatar");
                  var count = object.get("count");
+                 var type = object.get('type');
                  var time = object.createdAt;
                  var id = object.id;
                 // console.log(object.id + ' - ' + object.get('content'));
-                 $('.qingshu').find('.content').append("<div class='qsitem'> <div class='qscontent'>"+
-                  "<div class='qscontent1'> <text>"+content+"</text> </div>"+
-                  "<span class='qstitle'>"+title+"</span>"+
-                  "<span class='qstime'>"+time+"</span>"+
-                  "</div>"+
-                  "<div class='qsavatar'>"+"<img class='qsavatarimg' src="+avatar+"> </img> </div>"+
-                  "<div class='heart' rel='like' id="+id+">"+count+"</div>" +
-                  "</div>");
+                $('.qingshu').find('.content').append("<div class='qsitem'> <div class='qscontent'>"+
+                 "<div class='qscontent1'> <div>"+content+"</div><div class='tyle'><span class='biaoqian'>标签：</span><span class='typestyle'>"+type+
+                 "</span></div> </div>"+
+                 "<span class='qstitle'>"+title+"</span>"+
+                 "<span class='qstime'>"+time+"</span>"+
+                 "</div>"+
+                 "<div class='qsavatar'>"+"<img class='qsavatarimg' src="+avatar+"> </img> </div>"+
+                 "<div class='heart' rel='like' id="+id+">"+count+"</div>" +
+                 "</div>");
 
                   // var id = $(this).attr("id");
                   setTimeout(function(){

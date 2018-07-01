@@ -1,0 +1,94 @@
+.MobMain
+{
+    width: auto;
+    height: 100%;
+    overflow: scroll;
+    padding: 4px;
+    background: linear-gradient(330deg, #fff ,#152831);
+}
+.imgcontent
+{
+    padding: 4px;
+}
+.imgitem
+{
+    padding: 4px;
+    border: 1px solid#000;
+    margin: 5px 0px 5px 0px;
+    background: #fff;
+}
+.img-showing
+{
+    width: 100%;
+    border-radius: 4px;
+    display: inline-block;
+}
+.img-showing2
+{
+    width: calc(50% - 6px);
+    border-radius: 4px;
+    display: inline-block;
+    border:1px solid#000;
+    margin: 2px;
+}
+.img-showing3
+{
+    width: calc(50% - 6px);
+    border-radius: 4px;
+    display: inline-block;
+    border:1px solid#000;
+    margin: 2px;
+}
+.hidden
+{
+    display: none
+}
+.content
+{
+    position: absolute;
+    height: 80%;
+    overflow: scroll;
+    width: 90%;
+    top: 10%;
+    left: calc(5% - 8px);
+    display: none;
+    z-index: 1006;
+    background: #15626c;
+    padding: 4px 8px 4px 8px;
+    border-radius: 4px;
+}
+
+/* 每个item的样式 */
+.imgrecommend
+{
+    border: 1px solid #000;
+    line-height: 25px;
+    font-size: 12px;
+    color: #000;
+    text-align: center;
+    box-shadow: 0px 0px 10px #32735b;
+    border-radius: 4px;
+    margin-bottom: 15px;
+    margin-top: 5px;
+}
+.textrecimg
+{
+    padding: 0px 4px 0px 4px;
+    border-bottom: 1px solid#ddd;
+    margin: 4px;
+}
+.contentimg
+{
+    display: inline-block;
+    padding: 4px;
+    width: calc(50% - 12px);
+}
+.getmore
+{
+    margin: 0px;
+    line-height: 30px;
+    color: #000000;
+    font-weight: bold;
+    font-size: 15px;
+    border-top: 1px solid#ddd;
+}
