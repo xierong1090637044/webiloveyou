@@ -13,7 +13,7 @@ include_once '../phpcj/showtoast.php';
 		<meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=0">
 		<title>上传图片</title>
         <link rel="stylesheet" type="text/css" href="../css/uploadimg.css" />
-        <link rel="stylesheet"  href="../css/common.css">
+        <link rel="stylesheet"  href="../css/common1.css">
         <link rel="stylesheet"  href="../cjcss/toast.css">
         <link rel="stylesheet"  href="../css/base.css" />
 		<script type="text/javascript" src="../srcjs/jquery.min.js"></script>

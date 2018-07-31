@@ -39,7 +39,7 @@ class Caidan
                      </div>
                      </a>
 
-                     <a href="../funny/love_heart/index.html">
+                     <a href="depweb/lovestory.php">
                      <div class= "item">
                      <svg class="icon" aria-hidden="true">
                            <use xlink:href="#icon-jiehunjinianrix-"></use>

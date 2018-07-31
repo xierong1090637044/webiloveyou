@@ -8,9 +8,10 @@
 
 </style>
 
-<link href="css/default.css" type="text/css" rel="stylesheet">
+<link href="css/default1.css" type="text/css" rel="stylesheet">
 <script type="text/javascript" src="js/jquery.js"></script>
 <script type="text/javascript" src="js/garden.js"></script>
+<script type="text/javascript" src="../../srcjs/bmob.js"></script>
 <script type="text/javascript" src="js/functions.js"></script>
 
 </head>
@@ -19,34 +20,7 @@
 
 <div id="mainDiv">
 	<div id="content">
-		<div id="code">
-			<span class="comments">/**</span><br />
-			<span class="space"/><span class="comments">*2013—02-14,</span><br />
-			<span class="space"/><span class="comments">*2013-02-28.</span><br />
-			<span class="space"/><span class="comments">*/</span><br />
-			Boy name = <span class="keyword">Mr</span> LI<br />
-			Girl name = <span class="keyword">Mrs</span> ZHANG<br />
-			<span class="comments">// Fall in love river. </span><br />
-			The boy love the girl;<br />
-			<span class="comments">// They love each other.</span><br />
-			The girl loved the boy;<br />
-			<span class="comments">// AS time goes on.</span><br />
-			The boy can not be separated the girl;<br />
-			<span class="comments">// At the same time.</span><br />
-			The girl can not be separated the boy;<br />
-			<span class="comments">// Both wind and snow all over the sky.</span><br />
-			<span class="comments">// Whether on foot or 5 kilometers.</span><br />
-			<span class="keyword">The boy</span> very <span class="keyword">happy</span>;<br />
-			<span class="keyword">The girl</span> is also very <span class="keyword">happy</span>;<br />
-			<span class="placeholder"/><span class="comments">// Whether it is right now</span><br />
-			<span class="placeholder"/><span class="comments">// Still in the distant future.</span><br />
-			<span class="placeholder"/>The boy has but one dream;<br />
-			<span class="comments">// The boy wants the girl could well have been happy.</span><br />
-			<br>
-			<br>
-			I want to say:<br />
-			Baby, I love you forever;<br />
-		</div>
+		<div id="code"></div>
 		<div id="loveHeart">
 			<canvas id="garden"></canvas>
 			<div id="words">
@@ -55,33 +29,81 @@
 					<div id="elapseClock"></div>
 				</div>
 				<div id="loveu">
-					爱你直到永永远远。<br/>
-					<div class="signature">- 李先生</div>
+					<div class='loveutext'></div>
+					<div class="signature" id='signature'></div>
 				</div>
 			</div>
 		</div>
 	</div>
 </div>
 
+<div class="creatbutton">生成我的网站</div>
+
+<div class="notice">请填写完整内容！</div>
+<div class="notice1">创建成功！</div>
+<div class="notice2" id="notice2">请微信关注服务号“繁花相送”后制作！</div>
+
+<div class="mask" id='mask'></div>
+<div class="inputcontent">
+	<div class="inputItem">
+		<div class="textstyle">你的名字：</div>
+		<input maxlength="4" class="inputcontenstyle" id='youname'></input>
+	</div>
+	<div class="inputItem">
+		<div class="textstyle">爱的人的名字：</div>
+		<input maxlength="4" class="inputcontenstyle" id='lovername'></input>
+	</div>
+	<div class="inputItem">
+		<span>认识的时间：</span>
+		<input maxlength="4" class="inputtimestyle" id='year'></input>
+		<span>年</span>
+		<input maxlength="2" class="inputtimestyle1" id='month'></input>
+		<span>月</span>
+		<input maxlength="2" class="inputtimestyle1" id='day'></input>
+		<span>日</span>
+	</div>
+	<div class="inputItem">
+		<div class="textstyle">表白内容：</div>
+		<textarea maxlength="150" class="textareastyle" id='bbcontent' placeholder="为了展现更好的效果，一句话之后请用回车跳转下一句"></textarea>
+	</div>
+	<div class="inputItem">
+		<div class="textstyle">一句话表白：</div>
+		<input maxlength="10" class="inputcontenstyle1" id='jdbb'></input>
+	</div>
+
+	<div class="submit" id='submit'>提交</div>
+</div>
+
 <script type="text/javascript">
+Bmob.initialize("873b0fd8dbe9e8ff02d9923fe9698bb0", "cbca9557a637b9e82093720dbcfddabf");
+var objectid = GetRequest("objectid");
+var userid = objectid.objectid;
+
 var offsetX = $("#loveHeart").width() / 2;
 var offsetY = $("#loveHeart").height() / 2 - 55;
-var together = new Date();
-together.setFullYear(2018, 5, 18);//时间月数上减少一个月
-console.log(together);
 
-if (!document.createElement('canvas').getContext) {
-	var msg = document.createElement("div");
-	msg.id = "errorMsg";
-	msg.innerHTML = "Your browser doesn't support HTML5!<br/>Recommend use Chrome 14+/IE 9+/Firefox 7+/Safari 4+";
-	document.body.appendChild(msg);
-	$("#code").css("display", "none")
-	$("#copyright").css("position", "absolute");
-	$("#copyright").css("bottom", "10px");
-	document.execCommand("stop");
-} else {
+var objectid;
+
+if(userid ==null||userid=="")
+{
+	var together = new Date();
+	together.setFullYear(2018, 5, 18);//时间月数上减少一个月
+	console.log(together);
+	$('#code').append("<div>"+
+	"我说你是人间的四月天；</br>"+
+	"笑响点亮了四面风；</br>"+
+	"轻灵在春的光艳中交舞着变。 </br>"+
+	"你是四月早天里的云烟，</br>"+
+	"黄昏吹着风的软，</br>"+
+	"星子在无意中闪，</br>"+
+	"细雨点洒在花前。</br>"+
+	"</div>");
+
+	$('.loveutext').append('爱你直到永永远远。');
+	$('#signature').append('- 李先生');
 	setTimeout(function () {
 		startHeartAnimation();
+		$('.creatbutton').fadeIn('slow');
 	}, 5000);
 
 	timeElapse(together);
@@ -91,7 +113,208 @@ if (!document.createElement('canvas').getContext) {
 
 	adjustCodePosition();
 	$("#code").typewriter();
+}else {
+		var GameScore = Bmob.Object.extend("lovestory");
+		var query = new Bmob.Query(GameScore);
+		query.equalTo("userid", userid);
+		// 查询所有数据
+		query.find({
+			success: function(results) {
+				if (results.length ==0) {
+					var together = new Date();
+					together.setFullYear(2018, 5, 18);//时间月数上减少一个月
+					console.log(together);
+					$('#code').append("<div>"+
+					"我说你是人间的四月天；</br>"+
+					"笑响点亮了四面风；</br>"+
+					"轻灵在春的光艳中交舞着变。 </br>"+
+					"你是四月早天里的云烟，</br>"+
+					"黄昏吹着风的软，</br>"+
+					"星子在无意中闪，</br>"+
+					"细雨点洒在花前。</br>"+
+					"</div>");
+
+					$('.loveutext').append('爱你直到永永远远。');
+					$('#signature').append('- 李先生');
+					setTimeout(function () {
+						startHeartAnimation();
+						$('.creatbutton').fadeIn('slow');
+					}, 5000);
+
+					timeElapse(together);
+					setInterval(function () {
+						timeElapse(together);
+					}, 500);
+
+					adjustCodePosition();
+					$("#code").typewriter();
+
+					var GameScore = Bmob.Object.extend("lovestory");
+					var gameScore = new GameScore();
+					gameScore.set("youname", '');
+					gameScore.set("lovername", '');
+					gameScore.set("year", '');
+					gameScore.set("month", '');
+					gameScore.set("day", '');
+					gameScore.set("bbcontent", '');
+					gameScore.set("jdbb", '');
+					gameScore.set("userid", userid);
+					//添加数据，第一个入口参数是null
+					gameScore.save(null, {
+						success: function(gameScore) {
+							objectid = gameScore.id;
+							localStorage['lovestorystate'] =objectid;
+						},
+					});
+				}else {
+					var object = results[0];
+					var youname = object.get("youname");
+					var lovername = object.get("lovername");
+					var year = object.get("year");
+					var month = object.get("month");
+					var day = object.get("day");
+					var bbcontent = object.get("bbcontent");
+					var jdbb = object.get("jdbb");
+					console.log(year,month,day);
+					if(youname==''||lovername==''||year==''||month==''||day==''||bbcontent==''||jdbb=="")
+					{
+						var together = new Date();
+						together.setFullYear(2018, 5, 18);//时间月数上减少一个月
+						console.log(together);
+						$('#code').append("<div>"+
+						"我说你是人间的四月天；</br>"+
+						"笑响点亮了四面风；</br>"+
+						"轻灵在春的光艳中交舞着变。 </br>"+
+						"你是四月早天里的云烟，</br>"+
+						"黄昏吹着风的软，</br>"+
+						"星子在无意中闪，</br>"+
+						"细雨点洒在花前。</br>"+
+						"</div>");
+
+						$('.loveutext').append('爱你直到永永远远。');
+						$('#signature').append('- 李先生');
+						setTimeout(function () {
+							startHeartAnimation();
+							$('.creatbutton').fadeIn('slow');
+						}, 5000);
+
+						timeElapse(together);
+						setInterval(function () {
+							timeElapse(together);
+						}, 500);
+
+						adjustCodePosition();
+						$("#code").typewriter();
+					}else {
+						var together = new Date();
+						together.setFullYear(Number(year),Number(month-1), Number(day));//时间月数上减少一个月
+						$('#code').append("<div class='iwanttellyou'> <span class='lovernamecolor'>"+lovername+"</span><span>我想对你说：</span></div><div>"+bbcontent+"</div>");
+
+						$('.loveutext').append(jdbb);
+						$('#signature').append('-'+youname+'');
+
+						setTimeout(function () {
+							startHeartAnimation();
+							$('.creatbutton').fadeIn('slow');
+						}, 5000);
+
+						timeElapse(together);
+						setInterval(function () {
+							timeElapse(together);
+						}, 500);
+
+						adjustCodePosition();
+						$("#code").typewriter();
+					}
+				}
+			}});
 }
+
+$('.creatbutton').click(function(){
+
+	if(userid =="" ||userid==null)
+	{
+		$('#notice2').css('display','block')
+		setTimeout(function(){
+			$('#notice2').css('display','none')
+		},2000)
+	}else {
+		$('#mask').css('display','block');
+		$('.inputcontent').fadeIn('slow');
+	}
+})
+
+$('#mask').click(function(){
+	$('#mask').fadeOut('slow');
+	$('.inputcontent').fadeOut('fast');
+})
+
+$('#submit').click(function(){
+	var youname = $('#youname').val();
+	var lovername = $('#lovername').val();
+	var year = $('#year').val();
+	var month = $('#month').val();
+	var day = $('#day').val();
+	var bbcontent = $('#bbcontent').val();
+	var bbcontent = bbcontent.split("\n").join("<br />");
+	var jdbb = $('#jdbb').val();
+	console.log(youname,lovername,year,month,day,bbcontent,jdbb);
+
+	if(youname==''||lovername==''||year==''||month==''||day==''||bbcontent==''||jdbb=="")
+	{
+		$('.notice').css('display','block')
+		setTimeout(function(){
+			$('.notice').css('display','none')
+		},1000)
+	}
+	else {
+		var GameScore = Bmob.Object.extend("lovestory");
+		var query = new Bmob.Query(GameScore);
+		query.equalTo("userid", userid);
+		// 查询所有数据
+		query.find({
+			success: function(results) {
+				var object = results[0];
+				var id1 = object.id;
+				var GameScore = Bmob.Object.extend("lovestory");
+				var query = new Bmob.Query(GameScore);
+				query.get(id1, {
+					success: function(gameScore) {
+						gameScore.set("youname", youname);
+						gameScore.set("lovername", lovername);
+						gameScore.set("year", year);
+						gameScore.set("month", month);
+						gameScore.set("day", day);
+						gameScore.set("bbcontent", bbcontent);
+						gameScore.set("jdbb", jdbb);
+						gameScore.save();
+						window.location.reload();
+						$('.notice1').css('display','block')
+						setTimeout(function(){
+							$('.notice1').css('display','none');
+							$('#mask').css('display','none');
+							$('.inputcontent').fadeOut('slow');
+						},1000)
+					},
+				});
+			},
+		});
+	}
+
+})
+
+function GetRequest() {
+    var url = location.search; //获取url中"?"符后的字串
+    var theRequest = new Object();
+    if (url.indexOf("?") != -1) {
+        var str = url.substr(1);
+        strs = str.split("&");
+        for(var i = 0; i < strs.length; i ++) {
+             theRequest[strs[i].split("=")[0]]=unescape(strs[i].split("=")[1]);
+         }
+     }
+     return theRequest;
+ }
 </script>
 
 </body>

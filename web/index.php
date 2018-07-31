@@ -10,8 +10,10 @@ include_once '../lib/BmobUser.class.php';
 $weixin = new class_weixin();
 $bmobUser = new BmobUser();
 
-$username = $_COOKIE["username"];
-$password = $_COOKIE["password"];
+//$username = $_COOKIE["username"];
+//$password = $_COOKIE["password"];
+$username = "啦啦啦、岁月无恙";
+$password = "1";
 if($username ==null || $password ==null)
 {
     if (!isset($_GET["code"])){
@@ -54,7 +56,7 @@ if($username ==null || $password ==null)
 		<meta http-equiv="Expires" content="0" />
 		<title>别来无恙</title>
 		<link rel="stylesheet"  href="../css/reset.css">
-        <link rel="stylesheet"  href="../css/common.css">
+        <link rel="stylesheet"  href="../css/common1.css">
 		<link rel="stylesheet"  href="../css/style.css">
         <link rel="stylesheet"  href="../css/duihuakuang.css">
 		<link rel="stylesheet"  href="../css/iconfont.css">

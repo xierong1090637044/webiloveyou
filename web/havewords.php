@@ -12,7 +12,7 @@ include_once '../phpcj/inputwithicon.php';
 		<title>喂！我有话对你说</title>
 		<link rel="stylesheet"  href="../css/havewords.css">
         <!--<link rel="stylesheet"  href="../css/navbottom.css">-->
-        <link rel="stylesheet"  href="../css/common.css">
+        <link rel="stylesheet"  href="../css/common1.css">
 		<link rel="stylesheet"  href="../css/iconfont.css">
         <link rel="stylesheet"  href="../cjcss/toast.css">
 		<link href='http://fonts.googleapis.com/css?family=Lato:300,400,700' rel='stylesheet' type='text/css'>

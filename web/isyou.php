@@ -15,7 +15,7 @@ include_once '../phpcj/loading.php';
 		<title>缘来是你</title>
         <link rel="stylesheet" type="text/css" href="../css/isyou.css" />
         <!--<link rel="stylesheet"  href="../css/navbottom.css">-->
-		<link rel="stylesheet"  href="../css/common.css">
+		<link rel="stylesheet"  href="../css/common1.css">
 		<link rel="stylesheet"  href="../cjcss/toast.css">
 		<script type="text/javascript" src="../srcjs/jquery.min.js"></script>
 		<script type="text/javascript" src="../srcjs/bmob.js"></script>

@@ -10,7 +10,7 @@ include_once '../phpcj/showtoast.php';
 		<title>表白墙详情</title>
         <link rel="stylesheet"  href="../css/navbottom.css">
 		<link rel="stylesheet"  href="../css/iconfont.css">
-        <link rel="stylesheet"  href="../css/common.css">
+        <link rel="stylesheet"  href="../css/common1.css">
         <link rel="stylesheet"  href="../cjcss/toast.css">
         <link rel="stylesheet"  href="../css/webcss/bbqdetails.css">
 		<script type="text/javascript" src="../srcjs/jquery.min.js"></script>

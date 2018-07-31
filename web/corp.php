@@ -8,7 +8,7 @@ include_once '../phpcj/button.php';
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=0">
   <title>创建我的表白墙</title>
-  <link rel="stylesheet" href="../css/common.css">
+  <link rel="stylesheet" href="../css/common1.css">
   <link rel="stylesheet" href="../css/bootstrap.min.css">
   <link rel="stylesheet" href="../css/cropper.css">
   <link rel="stylesheet"  href="../cjcss/toast.css">

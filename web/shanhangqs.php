@@ -19,7 +19,7 @@ include_once '../phpcj/loading.php';
 		<link rel="stylesheet"  href="../css/iconfont.css">
 		<link rel="stylesheet"  href="../cjcss/create.css">
 		<link rel="stylesheet"  href="../cjcss/toast.css">
-		<link rel="stylesheet"  href="../css/common.css">
+		<link rel="stylesheet"  href="../css/common1.css">
 		<link href='http://fonts.googleapis.com/css?family=Lato:300,400,700' rel='stylesheet' type='text/css'>
 		<script type="text/javascript" src="../srcjs/jquery.min.js"></script>
 		<script type="text/javascript" src="../cjjs/create.js"></script>
