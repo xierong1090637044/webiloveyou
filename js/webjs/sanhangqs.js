@@ -160,8 +160,7 @@ $(document).ready(function(){
                  var id = object.id;
                 // console.log(object.id + ' - ' + object.get('content'));
                 $('.qingshu').find('.content').append("<div class='qsitem'> <div class='qscontent'>"+
-                 "<div class='qscontent1'> <div>"+content+"</div><div class='tyle'><span class='biaoqian'>标签：</span><span class='typestyle'>"+type+
-                 "</span></div> </div>"+
+                 "<div class='qscontent1'> <div>"+content+"</div></div>"+
                  "<span class='qstitle'>"+title+"</span>"+
                  "<span class='qstime'>"+time+"</span>"+
                  "</div>"+
@@ -223,8 +222,7 @@ $(document).ready(function(){
                  var id = object.id;
                 // console.log(object.id + ' - ' + object.get('content'));
                 $('.qingshu').find('.content').append("<div class='qsitem'> <div class='qscontent'>"+
-                 "<div class='qscontent1'> <div>"+content+"</div><div class='tyle'><span class='biaoqian'>标签：</span><span class='typestyle'>"+type+
-                 "</span></div> </div>"+
+                 "<div class='qscontent1'> <div>"+content+"</div></div>"+
                  "<span class='qstitle'>"+title+"</span>"+
                  "<span class='qstime'>"+time+"</span>"+
                  "</div>"+

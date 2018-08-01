@@ -12,7 +12,7 @@ include_once '../phpcj/showtoast.php';
 		<link rel="stylesheet"  href="../css/iconfont.css">
         <link rel="stylesheet"  href="../css/common1.css">
         <link rel="stylesheet"  href="../cjcss/toast.css">
-        <link rel="stylesheet"  href="../css/webcss/bbqdetails.css">
+        <link rel="stylesheet"  href="../css/webcss/bbqdetails1.css">
 		<script type="text/javascript" src="../srcjs/jquery.min.js"></script>
 		<script type="text/javascript" src="../srcjs/bmob.js"></script>
         <script type="text/javascript" src="../js/webjs/bbqdetails.js"></script>

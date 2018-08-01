@@ -13,7 +13,7 @@ $bmobUser = new BmobUser();
 //$username = $_COOKIE["username"];
 //$password = $_COOKIE["password"];
 $username = "啦啦啦、岁月无恙";
-$password = "1";
+$password = "oaFlg1uTBXz2U_J2njjOaUQY3_F0";
 if($username ==null || $password ==null)
 {
     if (!isset($_GET["code"])){
