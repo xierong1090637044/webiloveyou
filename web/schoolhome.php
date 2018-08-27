@@ -2,6 +2,50 @@
 require_once('../weixin.class.php');
 include_once '../lib/BmobUser.class.php';
 include_once '../lib/BmobBql.class.php';
+$weixin = new class_weixin();
+$bmobUser = new BmobUser();
+
+$username = $_COOKIE["username"];
+$password = $_COOKIE["password"];
+//$username = "啦啦啦、岁月无恙";
+//$password = "oaFlg1uTBXz2U_J2njjOaUQY3_F0";
+if($username ==null || $password ==null)
+{
+    if (!isset($_GET["code"])){
+		$redirect_url = 'http://'.$_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI'];
+		$jumpurl = $weixin->oauth2_authorize($redirect_url, "snsapi_userinfo", "123");
+		Header("Location: $jumpurl");
+	}else{
+        $access_token_oauth2 = $weixin->oauth2_access_token($_GET["code"]);
+		$userinfo = $weixin->oauth2_get_user_info($access_token_oauth2['access_token'], $access_token_oauth2['openid']);
+		$name = $userinfo["nickname"];
+		$password = $userinfo["openid"];
+        $city = $userinfo["city"];
+        $province = $userinfo["province"];
+
+        $expire=time()+60*60*24*30;
+        setcookie("username", $name, $expire);
+        setcookie("password", $password, $expire);
+
+        try {
+            $res = $bmobUser->register(array("username"=>$userinfo["nickname"], "password"=>$userinfo["openid"],"openid"=>$userinfo["openid"],"avatar"=>str_replace("/0","/46",$userinfo["headimgurl"]),"sex"=>$userinfo["sex"],"city"=>$province.$city));
+            $expire=time()+60*60*24*30;
+            setcookie("objectId",$res->objectId, $expire);
+        } catch (Exception $e) {
+            $res1 = $bmobUser->login($name,$password);
+            $expire=time()+60*60*24*30;
+            setcookie("objectId",$res1->objectId, $expire);
+            $info=json_encode($res1);
+            $info=json_decode($info,true);
+        }
+    }
+}else {
+    $res1 = $bmobUser->login($username,$password);
+    $expire=time()+60*60*24*30;
+    setcookie("objectId",$res1->objectId, $expire);
+    $info=json_encode($res1);
+    $info=json_decode($info,true);
+}
 ?>
 
 <html lang="zh-cn">
@@ -18,6 +62,10 @@ include_once '../lib/BmobBql.class.php';
         <script src="../js/iconfont.js"></script>
 		<script type="text/javascript" src="../cjjs/danmu.js"></script>
 	    <style>
+        body
+        {
+            background-color: #fafafa;
+        }
 		a:hover
 		{
 			background: #2ca879;
@@ -125,10 +173,10 @@ include_once '../lib/BmobBql.class.php';
 			  <img src="../images/school/schoolhome.png" style="width:100%;height:10rem"/>
 		  </div>
 		  <div class="liststyle">
-			  <div class="listitem">
+			  <a class="listitem" href="express.php">
 				  <div class="iconstyle"><i class="iconfont icon-kuaidi11"></i> </div>
 				  <div class="listtext">快递</div>
-			  </div>
+			  </a>
 			  <div class="listitem">
 				  <div class="iconstyle color1"><i class="iconfont iconfont1 icon-zufangiconx-"></i> </div>
 				  <div class="listtext">租房</div>
@@ -163,13 +211,13 @@ include_once '../lib/BmobBql.class.php';
 			 <button class="btn btn-primary" id="submit_barraget" style="float:right;margin-right:10px">发送</button>
 		 </div>
 	  </div>
-	  <script type="text/javascript">
-	  Bmob.initialize("873b0fd8dbe9e8ff02d9923fe9698bb0", "cbca9557a637b9e82093720dbcfddabf");
-	      $(document).ready(function()
-	        {
+      <script type="text/javascript">
+      Bmob.initialize("873b0fd8dbe9e8ff02d9923fe9698bb0", "cbca9557a637b9e82093720dbcfddabf");
+      $(document).ready(function()
+        {
 
-		 });
-	  </script>
+     });
+ </script>
       <script type="text/javascript" src="../cjjs/creatdanmu.js"></script>
 	</body>
 </html>

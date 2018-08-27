@@ -15,7 +15,7 @@ query.find({
              var Obj = $('body').barrage({
                  data : data, //数据列表
                  row : 5,   //显示行数
-                 time : 2000, //间隔时间
+                 time : 2500, //间隔时间
                  gap : 10,    //每一个的间隙
                  position : 'fixed', //绝对定位
                  direction : 'left', //方向
