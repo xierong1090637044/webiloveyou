@@ -16,7 +16,7 @@ include_once '../phpcj/loading.php';
 		<meta http-equiv="Expires" content="0" />
 		<title>三行情书</title>
 		<link rel="stylesheet"  href="../css/webcss/sanhangqs.css">
-		<link rel="stylesheet"  href="../css/iconfont.css">
+		<link rel="stylesheet"  href="../css/iconfont1.css">
 		<link rel="stylesheet"  href="../cjcss/create.css">
 		<link rel="stylesheet"  href="../cjcss/toast.css">
 		<link rel="stylesheet"  href="../css/common1.css">

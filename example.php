@@ -12,7 +12,7 @@ include_once '../lib/BmobBql.class.php';
 		<meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=0">
 		<title>三行情书</title>
         <link rel="stylesheet"  href="../css/navbottom.css">
-		<link rel="stylesheet"  href="../css/iconfont.css">
+		<link rel="stylesheet"  href="../css/iconfont1.css">
 		<script type="text/javascript" src="../srcjs/jquery.min.js"></script>
 		<script type="text/javascript" src="../srcjs/bmob.js"></script>
 		<!--<link rel="stylesheet"  href="../cjcss/danmu.css">-->

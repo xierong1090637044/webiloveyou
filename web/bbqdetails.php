@@ -9,7 +9,7 @@ include_once '../phpcj/showtoast.php';
 		<meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=0">
 		<title>表白墙详情</title>
         <link rel="stylesheet"  href="../css/navbottom.css">
-		<link rel="stylesheet"  href="../css/iconfont.css">
+		<link rel="stylesheet"  href="../css/iconfont1.css">
         <link rel="stylesheet"  href="../css/common1.css">
         <link rel="stylesheet"  href="../cjcss/toast.css">
         <link rel="stylesheet"  href="../css/webcss/bbqdetails1.css">

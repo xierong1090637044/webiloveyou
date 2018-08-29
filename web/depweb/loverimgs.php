@@ -9,7 +9,7 @@ include_once '../../phpcj/mask.php';
 		<title>情侣头像</title>
         <link rel="stylesheet"  href="../../css/common1.css">
 		<link rel="stylesheet"  href="../../css/webcss/qinglvtx.css">
-		<link rel="stylesheet"  href="../../css/iconfont.css">
+		<link rel="stylesheet"  href="../../css/iconfont1.css">
 		<script type="text/javascript" src="../../srcjs/jquery.min.js"></script>
 		<script type="text/javascript" src="../../srcjs/bmob.js"></script>
 		<script type="text/javascript" src="../../js/webjs/qinglvtx.js"></script>

@@ -53,7 +53,7 @@ if($username ==null || $password ==null)
 		<meta charset="UTF-8">
 		<meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=0">
 		<title>校园服务</title>
-		<link rel="stylesheet"  href="../css/iconfont.css">
+		<link rel="stylesheet"  href="../css/iconfont1.css">
 		<link rel="stylesheet"  href="../css/bootstrap.min.css">
 		<link rel="stylesheet"  href="../cjcss/danmu.css">
 		<script type="text/javascript" src="../srcjs/jquery.min.js"></script>
@@ -140,6 +140,10 @@ if($username ==null || $password ==null)
 	   {
 		   background: #515151!important;
 	   }
+       .color6
+	   {
+		   background: #9732c1!important;
+	   }
 	   .inputdanmu
 	   {
 		   position: fixed;
@@ -189,6 +193,10 @@ if($username ==null || $password ==null)
 				  <div class="iconstyle color3"><i class="iconfont iconfont1 icon-mengxiang2"></i> </div>
 				  <div class="listtext">活动</div>
 			  </div>
+              <div class="listitem">
+				  <div class="iconstyle color6"><i class="iconfont iconfont1 icon-lingshi"></i> </div>
+				  <div class="listtext">零食小店</div>
+			  </div>
 			  <a href="index.php" class="listitem">
 				  <div class="iconstyle color4"><i class="iconfont iconfont1 icon-lianai"></i> </div>
 				  <div class="listtext">恋爱</div>
@@ -199,7 +207,7 @@ if($username ==null || $password ==null)
 			  </div>
 		  </div>
 
-		  <div class="textlook">
+		  <!--<div class="textlook">
 			  <i class="iconfont icon-youqingtishi iconfont2"></i>
 			  <text style="color:#5c5c5c">看看他们怎么说</text>
 		  </div>
@@ -209,11 +217,11 @@ if($username ==null || $password ==null)
    		     <button id="open" class="btn btn-primary">弹</button>
 			 <input type="text" class="form-control" name="" id="barrage_content" placeholder="发送弹幕,最多15个字" maxlength=15 style="float:right">
 			 <button class="btn btn-primary" id="submit_barraget" style="float:right;margin-right:10px">发送</button>
-		 </div>
+		 </div>-->
 	  </div>
       <script type="text/javascript">
       Bmob.initialize("873b0fd8dbe9e8ff02d9923fe9698bb0", "cbca9557a637b9e82093720dbcfddabf");
       </script>
-      <script type="text/javascript" src="../cjjs/creatdanmu.js"></script>
+      <!--<script type="text/javascript" src="../cjjs/creatdanmu.js"></script>-->
 	</body>
 </html>
