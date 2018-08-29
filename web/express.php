@@ -17,140 +17,12 @@ $info=json_decode($info,true);
 		<title>快递服务</title>
         <link rel="stylesheet"  href="../css/bootstrap.min.css">
 		<link rel="stylesheet"  href="../css/iconfont.css">
+		<link rel="stylesheet"  href="../css/webcss/express.css">
 		<script type="text/javascript" src="../srcjs/jquery.min.js"></script>
 		<script type="text/javascript" src="../srcjs/bmob.js"></script>
         <script src="../js/iconfont.js"></script>
         <script type="text/javascript" src="../js/webjs/express1.js"></script>
         <script type="text/javascript" src="../js/bootstrap.js"></script>
-        <style>
-        body
-        {
-            background-color: #fafafa;
-            overflow: hidden;
-        }
-        .Mobcontent
-        {
-            padding: 10px;
-        }
-        .avatar
-        {
-            width: 4rem;
-            height: 4rem;
-            border-radius: 50%;
-        }
-        .avatarandname
-        {
-            display: flex;
-            margin: 0px 0px 10px;
-            line-height: 4rem;
-        }
-        .nickname
-        {
-            margin: 0 0 0 10px;
-        }
-        .dropdown1
-        {
-            margin: 0 0 10px;
-        }
-        .dropdown2
-        {
-            margin: 0;
-            float: left;
-            display: inline-block;
-        }
-        input:focus
-        {
-            border:unset !important;
-            outline: unset;
-        }
-        .input
-        {
-            border:unset !important;
-            outline: unset;
-            line-height: 34px;
-            background: unset;
-            width: calc(100% - 89px);
-            margin: 0 0 0 5;
-        }
-        .inputele
-        {
-            border:1px solid#666;
-            width: 80%;
-            padding: 0px 5px 0 0px;
-            margin: 0 auto;
-        }
-        .iconsousuo
-        {
-            font-size: 25px;
-            float: right;
-        }
-        .choosecontent
-        {
-            border:1px solid#666;
-            border-radius: 4px;
-            background: #fff;
-            padding: 10px;
-            min-height: 50vh;
-            max-height: 80vh;
-            overflow: scroll;
-            margin-bottom: 10px;
-        }
-        .toast
-        {
-            background: #666;
-            color:#fff;
-            line-height: 30px;
-            font-size: 14px;
-            padding: 5px 10px;
-            visibility: hidden;
-            text-align: center;
-            border-radius: 4px;
-            position: fixed;
-            bottom: 20%;
-            left:10%;
-            right: 10%;
-        }
-        .companyname
-        {
-            padding: 10px 5px;
-            border-bottom: 1px solid#ddd;
-            display: none;
-        }
-        .alllist
-        {
-            font-size: 12px;
-            padding: 8px 4px;
-        }
-        .listtime
-        {
-            float: right;
-            width: 100%;
-            border-bottom: 1px solid#ddd;
-            line-height: 30px;
-            text-align: right;
-        }
-        .dropdown-item1
-        {
-            display: block;
-            width: 100%;
-            padding: .25rem .5rem;
-            clear: both;
-            font-weight: 400;
-            color: #212529;
-            text-align: center;
-            white-space: nowrap;
-            background-color: transparent;
-            border: 0;
-        }
-        .dropdown-toggle1
-        {
-            border-radius: unset !important;
-        }
-        .btn
-        {
-            height: 36px;
-        }
-        </style>
 	</head>
 	<body>
      <div class="Mobcontent" id="Mobcontent">
@@ -190,9 +62,62 @@ $info=json_decode($info,true);
            </div>
          </div>
 
-          <div class="choosecontent" id="content1" style="display:none">
+          <div class="choosecontent" id="content1" style="display:none;text-align:center">
+			  <div>
+				  <span style="display: inline-block;width: 80px;text-align:right">您的名字</span>
+				  <input placeholder="您的名字" maxlength="10" type="text" class="inputadd" id="input1">
+			  </div>
+			  <div>
+				  <span style="display: inline-block;width: 80px;text-align:right">您的手机</span>
+				  <input placeholder="您的联系电话" maxlength="11" type="number" class="inputadd" id="input2">
+			  </div>
+			  <div>
+				  <span style="display: inline-block;width: 80px;text-align:right">您的地址</span>
+				  <input placeholder="取件地址" maxlength="30" type="text" class="inputadd" id="input3">
+			  </div>
+			  <div>
+				  <span style="display: inline-block;width: 80px;text-align:right">收件人姓名</span>
+				  <input placeholder="收件人姓名" maxlength="10" type="text" class="inputadd" id="input4">
+			  </div>
+			  <div>
+				  <span style="display: inline-block;width: 80px;text-align:right">收件人电话</span>
+				  <input placeholder="收件人联系方式" maxlength="11" type="number" class="inputadd" id="input5">
+			  </div>
+			  <div>
+				  <span style="display: inline-block;width: 80px;text-align:right">收件人地址</span>
+				  <input placeholder="收件人地址" maxlength="30" type="text" class="inputadd" id="input6">
+			  </div>
+			  <div>
+				  <span style="display: inline-block;width: 80px;text-align:right">备注</span>
+				  <input placeholder="备注（可不填）" maxlength="30" type="text" class="inputadd" id="input7">
+			  </div>
+			  <button type="button" class="btn btn-success" style="margin:20px 0 10px;width:160px" id='submit'>提交</button>
           </div>
 
+		  <div class="choosecontent1" id="content2" style="display:none;text-align:center"></div>
+
+		  <button id='giveup'type="button" class="btn btn-primary giveup" data-toggle="modal" data-target="#exampleModalCenter">取消</button>
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLongTitle">是否取消</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        您是否决定取消此快递订单
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">关闭</button>
+        <button type="button" class="btn btn-primary" data-dismiss="modal" id="delete">确定</button>
+      </div>
+    </div>
+  </div>
+</div>
          <div id='toast' class="toast"></div>
      </div>
 	</body>

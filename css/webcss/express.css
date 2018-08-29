@@ -1,0 +1,179 @@
+body
+{
+    background-color: #fafafa;
+    overflow: hidden;
+}
+.Mobcontent
+{
+    padding: 10px;
+}
+.avatar
+{
+    width: 4rem;
+    height: 4rem;
+    border-radius: 50%;
+}
+.avatarandname
+{
+    display: flex;
+    margin: 0px 0px 10px;
+    line-height: 4rem;
+}
+.nickname
+{
+    margin: 0 0 0 10px;
+}
+.dropdown1
+{
+    margin: 0 0 10px;
+}
+.dropdown2
+{
+    margin: 0;
+    float: left;
+    display: inline-block;
+}
+input:focus
+{
+    border-top:unset !important;
+    border-left:unset !important;
+    border-right:unset !important;
+    outline: unset;
+    border-bottom: 1px solid#202a36;
+}
+.input
+{
+    border:unset !important;
+    outline: unset;
+    line-height: 34px;
+    background: unset;
+    width: calc(100% - 89px);
+    margin: 0 0 0 5;
+}
+.inputele
+{
+    border:1px solid#666;
+    width: 80%;
+    padding: 0px 5px 0 0px;
+    margin: 0 auto;
+}
+.iconsousuo
+{
+    font-size: 25px;
+    float: right;
+}
+.choosecontent
+{
+    border:1px solid#666;
+    border-radius: 4px;
+    background: #fff;
+    padding: 10px;
+    min-height: 50vh;
+    max-height: 80vh;
+    overflow: scroll;
+    margin-bottom: 10px;
+}
+.choosecontent1
+{
+    border:1px solid#666;
+    border-radius: 4px;
+    background: #fff;
+    padding: 10px 20px 10px 40px;
+    max-height: 80vh;
+    overflow: scroll;
+}
+.toast
+{
+    background: #666;
+    color:#fff;
+    line-height: 30px;
+    font-size: 14px;
+    padding: 5px 10px;
+    visibility: hidden;
+    text-align: center;
+    border-radius: 4px;
+    position: fixed;
+    bottom: 5%;
+    left:10%;
+    right: 10%;
+}
+.companyname
+{
+    padding: 10px 5px;
+    border-bottom: 1px solid#ddd;
+    display: none;
+}
+.alllist
+{
+    font-size: 12px;
+    padding: 8px 4px;
+}
+.listtime
+{
+    float: right;
+    width: 100%;
+    border-bottom: 1px solid#ddd;
+    line-height: 30px;
+    text-align: right;
+}
+.dropdown-item1
+{
+    display: block;
+    width: 100%;
+    padding: .25rem .5rem;
+    clear: both;
+    font-weight: 400;
+    color: #212529;
+    text-align: center;
+    white-space: nowrap;
+    background-color: transparent;
+    border: 0;
+}
+.dropdown-toggle1
+{
+    border-radius: unset !important;
+}
+.btn
+{
+    height: 36px;
+}
+.inputadd
+{
+    border-width: unset;
+    border-style: unset;
+    border-bottom: 1px solid#202a36;
+    margin: 10px 0 0;
+    text-align: center;
+}
+.liststyle
+{
+    display: inline-block;
+    width: 80px;
+    text-align:right;
+    overflow-x: scroll;
+}
+.liststyle1
+{
+    display: inline-block;
+    text-align: center;
+    width: calc(100% - 90px);
+    overflow-x: scroll;
+    white-space: nowrap;
+    padding: 0px 0px 0px 10px;
+}
+.state
+{
+    text-align: right;
+    color: #cb683d;
+}
+.orderlist
+{
+    line-height: 25px;
+}
+.giveup
+{
+    margin: 0 auto;
+    visibility: hidden;
+    display: block;
+    margin-top: 20px
+}

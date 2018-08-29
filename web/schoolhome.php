@@ -213,11 +213,7 @@ if($username ==null || $password ==null)
 	  </div>
       <script type="text/javascript">
       Bmob.initialize("873b0fd8dbe9e8ff02d9923fe9698bb0", "cbca9557a637b9e82093720dbcfddabf");
-      $(document).ready(function()
-        {
-
-     });
- </script>
+      </script>
       <script type="text/javascript" src="../cjjs/creatdanmu.js"></script>
 	</body>
 </html>
